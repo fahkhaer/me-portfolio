@@ -12,7 +12,6 @@ import {
 import { navigationData } from '@/src/constants/navigation-data';
 import { Menu } from 'lucide-react';
 import { useScroll, useTransform, motion } from 'motion/react';
-import Image from 'next/image';
 import Link from 'next/link';
 import Hero from './hero';
 
@@ -32,9 +31,9 @@ function Navbar() {
 
   return (
     <>
-      <section className='flex-wrap place-items-center overflow-hidden bg-[#A53860F0]'>
+      <div className='flex-wrap place-items-center overflow-hidden bg-[#A53860F0]'>
         <motion.header
-          className='custom-container mt-8 flex w-fit rounded-full'
+          className='mt-8 flex rounded-full'
           style={{ background, backdropFilter: backdropBlur }}
         >
           <nav className='hidden place-content-center lg:block'>
@@ -76,9 +75,8 @@ function Navbar() {
             <SheetClose />
           </Sheet>
         </motion.header>
-
-        <Hero />
-      </section>
+      </div>
+      <Hero />
     </>
   );
 }

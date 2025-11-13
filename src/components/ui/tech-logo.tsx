@@ -12,7 +12,7 @@ const TechLogo: React.FC<TechLogoProps> = ({ title, logo, className }) => {
   return (
     <div
       className={cn(
-        'flex aspect-square size-[69.4337387084961] items-center justify-center rounded-full border bg-white p-[11.57px] [&>*]:h-auto [&>*]:w-full'
+        'border-primary-300 flex aspect-square size-[69.4337387084961] items-center justify-center rounded-full border p-[11.57px] [&>*]:h-auto [&>*]:w-auto'
       )}
       style={{ width: 'clamp(3rem, 5.75vw, 4.31rem)' }}
     >
