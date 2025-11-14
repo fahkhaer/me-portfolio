@@ -31,7 +31,7 @@ function Navbar() {
 
   return (
     <>
-      <div className='flex-wrap place-items-center overflow-hidden bg-[#A53860F0]'>
+      <div className='relative flex-wrap place-items-center overflow-hidden bg-[#A53860F0]'>
         <motion.header
           className='mt-8 flex rounded-full'
           style={{ background, backdropFilter: backdropBlur }}
@@ -75,8 +75,8 @@ function Navbar() {
             <SheetClose />
           </Sheet>
         </motion.header>
-      </div>
       <Hero />
+      </div>
     </>
   );
 }

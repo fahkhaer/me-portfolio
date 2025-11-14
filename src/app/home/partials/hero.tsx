@@ -9,133 +9,115 @@ import Navbar from './navbar';
 const Hero = () => {
   return (
     <>
-      <div className='relative bg-[#A53860F0] items-start pl-30 md:h-225'>
-      {/* kanan */}
-
-      {/* kiri */}
-      <div className='border-primary-300 absolute top-1/2 left-0 flex w-28 -translate-y-full flex-col items-center justify-center gap-[21.78px] rounded-full border px-[21.78px] py-[32.67px]'>
-        <TechLogo
-          logo={
-            <Image width={52} height={52} src='/icons/js.png' alt='logo-js' />
-          }
-        />
-        <TechLogo
-          logo={
-            <Image width={52} height={52} src='/icons/css.png' alt='logo-css' />
-          }
-        />
-        <TechLogo
-          logo={
-            <Image
-              width={52}
-              height={52}
-              src='/icons/html.png'
-              alt='logo-html'
-            />
-          }
-        />
-        <TechLogo
-          logo={
-            <Image
-              width={52}
-              height={52}
-              src='/icons/react.png'
-              alt='logo-react'
-            />
-          }
-        />
-      </div>
-
-      {/* tengah */}
-      {/* available for hire */}
-      <div className='absolute top-[227px] translate-x-full gap-3.5'>
-        <Button
-          className='border-primary-300 rounded-full'
-          variant={'secondary'}
-        >
-          <Icon
-            icon='fontisto:ellipse'
-            width='24'
-            height='24'
-            className='text-[#E26190]'
+    <Navbar />
+     <section className="relative flex h-screen w-full items-center justify-center overflow-hidden bg-[#A53860F0] px-6">
+      {/* kiri - tech logo */}
+      <div className="absolute left-10 top-70 -translate-y-1/2 flex flex-col items-center gap-5">
+        {['js', 'css', 'html', 'react'].map((tech) => (
+          <TechLogo
+            key={tech}
+            logo={
+              <Image
+                width={52}
+                height={52}
+                src={`/icons/${tech}.png`}
+                alt={`logo-${tech}`}
+              />
+            }
           />
-          <p className='text-white'>Available for Hire </p>
-        </Button>
+        ))}
       </div>
 
-      <p className='font-bonheur -rotate-12 h-[142px] leading-[142px] text-[113.23px] text-white absolute '>
-        Junior
-      </p>
-      {/* front end developer */}
-      <div className='font-anton text-secondary-100 tracki flex flex-col leading-[228px]'>
-        <p className='text-[187.76px]'>FRONTEND</p>
-        <p className='text-[168.82px]'>DEVELOPER</p>
+      {/* Tengah - Hero Text */}
+      <div className="relative flex flex-col items-center text-center">
+        {/* Junior */}
+        <p className="absolute -top-16 -left-24 -rotate-12 font-bonheur text-[113px] leading-none text-white">
+          Junior
+        </p>
+
+        {/* FRONTEND DEVELOPER */}
+        <div className="font-anton leading-[0.9] text-secondary-100">
+          <p className="text-[9vw] md:text-[160px]">FRONTEND</p>
+          <p className="text-[8vw] md:text-[140px]">DEVELOPER</p>
+        </div>
+
+        {/* Available for Hire */}
+        <div className="mt-10 flex items-center gap-3">
+          <Button
+            className="rounded-full border border-primary-300 bg-transparent text-white hover:bg-[#E26190]/30"
+            variant="secondary"
+          >
+            <Icon
+              icon="fontisto:ellipse"
+              width="20"
+              height="20"
+              className="text-[#E26190]"
+            />
+            <p>Available for Hire</p>
+          </Button>
+        </div>
       </div>
 
-      {/* Image */}
-      <div
-        style={{ height: 'clamp(23.44rem, 61.25vw, 45.94rem)' }}
-        className='translate-10xl bottom-0 left-0 absolute'
-      >
+      {/* Hero Image */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
         <Image
-          src='/images/hero.png'
-          alt='hero-image'
-          width={610}
-          height={735}
-          className=''
+          src="/images/hero.png"
+          alt="hero-image"
+          width={600}
+          height={720}
+          className="object-contain"
         />
       </div>
 
-      {/* scroll down */}
+      {/* Scroll down */}
       <Button
-        variant='ghost'
-        className='absolute bottom-10 translate-x-full'
+        variant="ghost"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white"
         asChild
       >
-        <Link href='#'>
-          <div className='flex items-center gap-1 text-white'>
-            <p className='text-md-semibold leading-5'>Scroll Down</p>
-            <Icon
-              icon='lucide:mouse'
-              width='24'
-              height='24'
-              className='size-6 rounded-full'
-            />
+        <Link href="#">
+          <div className="flex items-center gap-2">
+            <p className="text-md-semibold">Scroll Down</p>
+            <Icon icon="lucide:mouse" width="24" height="24" />
           </div>
         </Link>
       </Button>
 
-      {/* right */}
-      <div className='absolute top-1/2 right-0 -translate-y-1/2'>
+      {/* kanan - statistics & contact */}
+      <div className="absolute right-10 top-1/2 -translate-y-1/2 flex flex-col items-end gap-4">
         <Statistics />
-        <Button className='bg-secondary-100 flex h-14 w-full justify-between rounded-full py-2 pr-2 pl-4 hover:bg-[#D9A23F]'>
-          <p className='text-neutral-950'>Contact Me </p>
-
+        <Button className="flex h-14 w-56 items-center justify-between rounded-full bg-secondary-100 px-4 py-2 hover:bg-[#D9A23F]">
+          <p className="text-neutral-950">Contact Me</p>
           <Icon
-            icon='lucide:arrow-right'
-            width='36'
-            height='36'
-            className='size-9 rounded-full bg-neutral-950 p-2'
+            icon="lucide:arrow-right"
+            width="28"
+            height="28"
+            className="rounded-full bg-neutral-950 p-1.5"
           />
         </Button>
       </div>
-      {/* hi i'm edwin */}
-      <div className='absolute bottom-[188px] left-0 flex w-113 flex-col gap-3.5 text-white'>
-        <div>
-          <Icon
-            icon='fluent:mic-24-filled'
-            className='size-16 rounded-full border border-[#B76080] px-[6.56px] pt-[2.63px]'
-          />
+
+      {/* kiri bawah - Hi I'm Edwin */}
+      <div className="absolute bottom-24 left-10 w-[360px] text-white">
+        <div className="flex flex-col gap-3">
+          <div>
+            <Icon
+              icon="fluent:mic-24-filled"
+              className="size-14 rounded-full border border-[#B76080] p-1"
+            />
+          </div>
+          <p className="text-xl font-semibold">Hi, I'm Edwin Anderson</p>
+          <p className="text-base leading-relaxed">
+            A frontend developer passionate about creating seamless digital
+            experiences that are fast, responsive, and user-friendly.
+          </p>
         </div>
-        <p className='text-md-medium md:text-xl-bold'>Hi, I'm Edwin Anderson</p>
-        <p className='text-lg-medium'>
-          a frontend developer passionate about creating seamless digital
-          experiences that are fast, responsive, and user-friendly.
-        </p>
       </div>
-    </div>
+    </section>
     </>
-  
+
+
+   
   );
 };
 export default Hero;
