@@ -2,7 +2,6 @@
   "name": "my-portfolio",
   "version": "0.1.0",
   "private": true,
-  
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -20,6 +19,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.23.24",
     "lucide-react": "^0.552.0",
     "motion": "^12.23.24",
     "next": "16.0.1",

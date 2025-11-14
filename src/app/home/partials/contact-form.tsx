@@ -1,4 +1,6 @@
 'use client';
+import { motion } from 'framer-motion';
+
 import emailjs from '@emailjs/browser';
 import { zodResolver } from '@hookform/resolvers/zod';
 import React from 'react';
@@ -130,26 +132,28 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <Image
-            className='absolute top-0 translate-x-12/9 -translate-y-9'
-            width={142}
-            height={142}
-            src='/images/man.png'
-            alt='man'
-          />
+          <motion.div
+            className='absolute top-0 translate-x-12/7 -translate-y-9'
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+          >
+            <Image width={142} height={142} src='/images/man.png' alt='man' />
+          </motion.div>
           <Form {...form}>
             <form
-              className='mx-auto md:w-[612px] max-w-180 space-y-5 rounded-4xl bg-white p-8 shadow-[0_4px_16px_rgba(0,0,0,0.1)] md:p-8'
+              className='mx-auto max-w-180 space-y-5 rounded-4xl bg-white p-8 shadow-[0_4px_16px_rgba(0,0,0,0.1)] md:w-[612px] md:p-8'
               onSubmit={form.handleSubmit(onSubmit)}
             >
-              <FormField  
+              <FormField
                 control={form.control}
-                
                 name='name'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className='text-sm-bold leading-7'>Name</FormLabel>
-                    <Input 
+                    <FormLabel className='text-sm-bold leading-7'>
+                      Name
+                    </FormLabel>
+                    <Input
                       disabled={loading}
                       placeholder={'Input your name'}
                       {...field}
@@ -165,7 +169,9 @@ const ContactForm = () => {
                 name='email'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className='text-sm-bold leading-7'>Email</FormLabel>
+                    <FormLabel className='text-sm-bold leading-7'>
+                      Email
+                    </FormLabel>
                     <Input
                       disabled={loading}
                       placeholder='Input your email'
@@ -181,8 +187,11 @@ const ContactForm = () => {
                 name='message'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className='text-sm-bold leading-7'>Message</FormLabel>
-                    <Textarea className='h-[134px] resize-none'
+                    <FormLabel className='text-sm-bold leading-7'>
+                      Message
+                    </FormLabel>
+                    <Textarea
+                      className='h-[134px] resize-none'
                       disabled={loading}
                       placeholder='Input your message'
                       {...field}
@@ -192,8 +201,11 @@ const ContactForm = () => {
                 )}
               />
 
-            
-              <Button variant='secondary' disabled={loading} className='mt-6 w-full md:mt-10'>
+              <Button
+                variant='secondary'
+                disabled={loading}
+                className='mt-6 w-full rounded-full md:mt-10'
+              >
                 {loading ? <ClipLoader size={20} color='#fff' /> : 'Lets Talk'}
               </Button>
             </form>

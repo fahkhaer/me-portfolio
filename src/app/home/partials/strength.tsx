@@ -1,8 +1,10 @@
+'use client';
 import Section from '@/src/components/layouts/Section';
 import { Icon } from '@iconify/react';
 import { X } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
+import { motion } from 'framer-motion';
 
 function Strength() {
   const skills = [
@@ -24,6 +26,16 @@ function Strength() {
     'No Design Skills',
   ];
 
+  // Variants untuk daftar item muncul dengan stagger
+  const listVariant = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.1 },
+    }),
+  };
+
   return (
     <Section
       className='py-20'
@@ -34,7 +46,12 @@ function Strength() {
       {/* container */}
       <div className='grid gap-8 md:grid-cols-2'>
         {/* With Me */}
-        <div className='flex flex-col items-center rounded-2xl bg-white p-8 text-center shadow-sm'>
+        <motion.div
+          className='flex flex-col items-center rounded-2xl bg-white p-8 text-center shadow-sm'
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
           <p className='text-lg-bold text-neutral-950'>With Me</p>
 
           <Image
@@ -44,23 +61,36 @@ function Strength() {
             height={100}
             className='bg-primary-300 mt-6 rounded-full'
           />
+
           {/* text */}
           <div className='flex flex-col items-center space-y-6 pt-8'>
             {skills.map((skill, index) => (
-              <div key={index} className='flex items-center gap-3'>
+              <motion.div
+                key={index}
+                className='flex items-center gap-3'
+                custom={index}
+                initial="hidden"
+                animate="visible"
+                variants={listVariant}
+              >
                 <Icon
                   icon='material-symbols:check-rounded'
                   width='24'
                   height='24'
                 />
                 <p className='text-lg-semibold'>{skill}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Without Me */}
-        <div className='bg-secondary-100 flex flex-col items-center rounded-2xl p-8 text-center'>
+        <motion.div
+          className='bg-secondary-100 flex flex-col items-center rounded-2xl p-8 text-center'
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+        >
           <p className='text-lg-bold text-neutral-950'>Without Me</p>
 
           <Icon
@@ -73,13 +103,20 @@ function Strength() {
           {/* text */}
           <div className='flex flex-col items-center space-y-6 pt-8'>
             {other.map((item, index) => (
-              <div key={index} className='flex items-center gap-3'>
+              <motion.div
+                key={index}
+                className='flex items-center gap-3'
+                custom={index}
+                initial="hidden"
+                animate="visible"
+                variants={listVariant}
+              >
                 <X className='text-[#E5352D]' />
                 <p className='text-lg-semibold'>{item}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </Section>
   );
