@@ -34,13 +34,13 @@ const Hero = () => {
         </p>
 
         {/* FRONTEND DEVELOPER */}
-        <div className='font-anton text-secondary-100 absolute -top-[326px] translate-y-25 leading-[0.9]'>
+        <div className='font-anton text-secondary-100 absolute  z-50 -top-[326px] translate-y-25 leading-[0.9]'>
           <p className='text-[9vw] md:text-[160px]'>FRONTEND</p>
-          <p className='text-[8vw] md:text-[140px]'>DEVELOPER</p>
+          <p className='text-[8vw] md:text-[140px]'>DE<span className='text-[8vw] md:text-[140px] text-transparent stroke-2 stroke-yellow mix-blend-overlay'>VELO</span>PER </p>
         </div>
 
         {/* Available for Hire */}
-        <div className='absolute -top-[320px] mt-10 flex items-center gap-3'>
+        <div className='absolute -top-80 mt-10 flex items-center gap-3'>
           <Button
             className='border-primary-300 rounded-full border bg-[#860D39] text-white hover:bg-[#E26190]/30'
             variant='secondary'

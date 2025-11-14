@@ -232,6 +232,15 @@ body {
   font-style: normal;
 }
 
+.stroke-2 {
+  -webkit-text-stroke-width: 2px;
+}
+
+.stroke-yellow {
+  -webkit-text-stroke-color: #f5d57a; /* warna kuning seperti gambar */
+}
+
+
 @layer components {
   .custom-container {
     margin: 0 auto;
