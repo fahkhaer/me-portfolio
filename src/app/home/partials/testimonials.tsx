@@ -13,7 +13,7 @@ import { StaticImageData } from 'next/image';
 
 function Testimonials() {
   return (
-    <Section
+    <Section className='py-20'
       title='What They Say About Working With Me'
       subtitle='Real words from clients, teammates, and mentors I’ve collaborated with on various projects.'
       id='testimonial'
@@ -57,35 +57,41 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   profileOccupation,
 }) => {
   return (
-    <div className='bg-primary-300 rounded-7 px-10 py-8'>
-      {/* stars */}
-      <div className='flex gap-1'>
-        {new Array(rating).fill(null).map((_, index) => (
-          <Icon
-            key={index}
-            icon='line-md:star-filled'
-            className='text-2xl text-yellow-500'
+    <div className="relative w-full max-w-4xl mx-auto">
+      {/* shadow layers */}
+      <div className="absolute left-0 right-0 mx-auto -bottom-6 w-[90%] h-6 bg-primary-300/40 rounded-3xl blur-md"></div>
+      <div className="absolute left-0 right-0 mx-auto -bottom-12 w-[80%] h-6 bg-primary-300/20 rounded-3xl blur-md"></div>
+
+      {/* main card */}
+      <div className="bg-[#A8667A] text-white rounded-3xl px-12 py-16 text-center shadow-xl">
+        {/* stars */}
+        <div className="flex justify-center gap-1 mb-6">
+          {new Array(rating).fill(null).map((_, index) => (
+            <Icon
+              key={index}
+              icon="line-md:star-filled"
+              className="text-3xl text-yellow-400"
+            />
+          ))}
+        </div>
+
+        {/* description */}
+        <p className="text-xl leading-relaxed font-medium max-w-3xl mx-auto">
+          {description}
+        </p>
+
+        {/* profile */}
+        <div className="flex flex-col items-center mt-10">
+          <Image
+            src={profileSrc}
+            alt={profileName}
+            className="w-14 h-14 rounded-full object-cover"
           />
-        ))}
-      </div>
-      {/* text */}
-      <p className='display-xs-semibold text-neutral-25'>{description}</p>
-      {/* profile */}
-      <div className='flex-start mt-4 gap-4 md:mt-6'>
-        <Image
-          src={profileSrc}
-          alt={profileName}
-          className='size-12 rounded-full'
-        />
-        <div>
-          <p className='text-sm-bold md:text-md-semibold text-neutral-200'>
-            {profileName}
-          </p>
-          <p className='text-sm-regular md:text-md-regular text-neutral-400'>
-            {profileOccupation}
-          </p>
+          <p className="mt-3 font-semibold text-lg">{profileName}</p>
+          <p className="text-sm opacity-80">{profileOccupation}</p>
         </div>
       </div>
     </div>
   );
 };
+

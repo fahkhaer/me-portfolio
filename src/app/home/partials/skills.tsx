@@ -2,13 +2,13 @@ import Image from 'next/image';
 
 import { skillsData } from '@/src/constants/skills-data';
 import Section from '@/src/components/layouts/Section';
-import TechLogo from '@/src/components/ui/tech-logo';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNavigation,
 } from '@/src/components/ui/carousel';
+import { cn } from '@/src/lib/utils';
 
 export default function SkillsSection() {
   return (
@@ -16,31 +16,40 @@ export default function SkillsSection() {
       id='skills'
       title='Code, Design, and Everything in Between'
       subtitle='These are the technologies that power my workflow and bring ideas to life.'
-      className='bg-[#9E385E00]'
+      className='bg-[#9E385E00] py-20'
     >
       <Carousel>
-        <CarouselContent className='gap-5'>
+        <CarouselContent className=''>
           {skillsData.map(({ title, subtitle, className, icon }) => (
-            <CarouselItem
-              key={title}
-              className='basis-auto md:basis-1/4 lg:basis-1/6'
-            >
-              <TechLogo
-                title={title}
-                subtitle={subtitle}
-                className={className}
-                logo={
+            <CarouselItem key={title} className='lg:basis-1/4'>
+              <div
+                className={cn(
+                  `flex h-[260px] w-[215px] flex-col items-center rounded-[40px] border border-neutral-200 bg-white p-6 text-center shadow-sm`,
+                  className
+                )}
+              >
+                <div className='mb-4 flex h-16 w-16 items-center justify-center rounded-full border bg-white shadow-sm'>
                   <Image
-                    width={60}
-                    height={60}
+                    width={40}
+                    height={40}
                     src={`/icons/${icon}.png`}
                     alt={`logo-${icon}`}
                     className={
                       ['css', 'react'].includes(icon) ? 'bg-[#F5F5F5]' : ''
                     }
                   />
-                }
-              />
+                </div>
+
+                {/* TITLE */}
+                <h3 className='mb-2 text-lg font-semibold text-neutral-900'>
+                  {title}
+                </h3>
+
+                {/* SUBTITLE */}
+                <p className='text-sm leading-relaxed text-neutral-700'>
+                  {subtitle}
+                </p>
+              </div>
             </CarouselItem>
           ))}
         </CarouselContent>

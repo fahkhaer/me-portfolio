@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import emailjs from '@emailjs/browser';
 import { zodResolver } from '@hookform/resolvers/zod';
 import React from 'react';
@@ -20,6 +20,7 @@ import { Input } from '@/src/components/ui/input';
 import { Textarea } from '@/src/components/ui/textarea';
 import Section from '@/src/components/layouts/Section';
 import FormStatusDialog from '@/src/components/ui/form-status-dialog';
+import Image from 'next/image';
 
 const services = [
   'Web Development',
@@ -48,11 +49,9 @@ const contactSchema = z.object({
     .max(500, 'Message must be at most 500 characters long')
     .refine((val) => val.trim().length > 0, { message: 'Message is required' }),
 
-  services: z
-    .array(z.string())
-    .refine((value) => value.some((item) => item), {
-      message: 'You have to select at least one service.',
-    }),
+  services: z.array(z.string()).refine((value) => value.some((item) => item), {
+    message: 'You have to select at least one service.',
+  }),
 });
 
 const ContactForm = () => {
@@ -96,120 +95,162 @@ const ContactForm = () => {
   }
 
   return (
-    <Section
-      title='Let’s Build Something Great Together'
-      subtitle='Have a project in mind? Fill out the form below, and our team will get back to you shortly'
-      id='contact'
-    >
-      <Form {...form}>
-        <form
-          className='mx-auto max-w-180 space-y-5'
-          onSubmit={form.handleSubmit(onSubmit)}
-        >
-          <FormField
-            control={form.control}
-            name='name'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Name</FormLabel>
-                <Input
-                  disabled={loading}
-                  placeholder='Input your name'
-                  {...field}
-                />
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+    <section className='relative px-30 py-20'>
+      <div className='flex justify-around gap-12'>
+        {/* left */}
+        <div className='flex flex-col gap-10'>
+          <div>
+            <p className='display-xl-bold'>Let’s Work Together</p>
+            <p className='text-md-medium'>
+              Have a project in mind or just want to say hi? Drop me a message —
+              I’d love to hear from you.
+            </p>
+          </div>
 
-          <FormField
-            control={form.control}
-            name='email'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <Input
-                  disabled={loading}
-                  placeholder='Input your email'
-                  {...field}
-                />
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <div className='flex'>
+            <Image
+              width={142}
+              height={142}
+              src='/images/project1.png'
+              alt='project1'
+            />
+            <Image
+              width={142}
+              height={142}
+              src='/images/project2.png'
+              alt='project2'
+            />
+            <Image
+              width={142}
+              height={142}
+              src='/images/project3.png'
+              alt='project3'
+            />
+          </div>
+        </div>
 
-          <FormField
-            control={form.control}
-            name='message'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Message</FormLabel>
-                <Textarea
-                  disabled={loading}
-                  placeholder='Input your message'
-                  {...field}
-                />
-                <FormMessage />
-              </FormItem>
-            )}
+        <div>
+          <Image
+            className='absolute top-0 translate-x-12/9 -translate-y-9'
+            width={142}
+            height={142}
+            src='/images/man.png'
+            alt='man'
           />
-
-          <FormField
-            control={form.control}
-            name='services'
-            render={() => (
-              <FormItem>
-                <FormLabel>Services</FormLabel>
-                <div className='mt-3 grid grid-cols-1 gap-y-3 md:mt-3.5 md:grid-cols-[repeat(2,max-content)] md:gap-x-9.25 md:gap-y-4'>
-                  {services.map((service) => (
-                    <FormField
-                      key={service}
-                      control={form.control}
-                      name='services'
-                      render={({ field }) => (
-                        <FormItem
-                          key={service}
-                          className='flex items-center gap-3'
-                        >
-                          <FormControl>
-                            <Checkbox
-                              disabled={loading}
-                              checked={field.value?.includes(service)}
-                              onCheckedChange={(checked) => {
-                                return checked
-                                  ? field.onChange([...field.value, service])
-                                  : field.onChange(
-                                      field.value?.filter(
-                                        (value) => value !== service
-                                      )
-                                    );
-                              }}
-                            />
-                          </FormControl>
-                          <FormLabel className='text-sm-regular md:text-md-regular'>
-                            {service}
-                          </FormLabel>
-                        </FormItem>
-                      )}
+          <Form {...form}>
+            <form
+              className='mx-auto max-w-180 space-y-5 rounded-4xl bg-white p-8 shadow-[0_4px_16px_rgba(0,0,0,0.1)] md:p-8'
+              onSubmit={form.handleSubmit(onSubmit)}
+            >
+              <FormField
+                control={form.control}
+                name='name'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Name</FormLabel>
+                    <Input
+                      disabled={loading}
+                      placeholder='Input your name'
+                      {...field}
                     />
-                  ))}
-                </div>
-                <FormMessage />
-              </FormItem>
-            )}
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name='email'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <Input
+                      disabled={loading}
+                      placeholder='Input your email'
+                      {...field}
+                    />
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name='message'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Message</FormLabel>
+                    <Textarea
+                      disabled={loading}
+                      placeholder='Input your message'
+                      {...field}
+                    />
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name='services'
+                render={() => (
+                  <FormItem>
+                    <FormLabel>Services</FormLabel>
+                    <div className='mt-3 grid grid-cols-1 gap-y-3 md:mt-3.5 md:grid-cols-[repeat(2,max-content)] md:gap-x-9.25 md:gap-y-4'>
+                      {services.map((service) => (
+                        <FormField
+                          key={service}
+                          control={form.control}
+                          name='services'
+                          render={({ field }) => (
+                            <FormItem
+                              key={service}
+                              className='flex items-center gap-3'
+                            >
+                              <FormControl>
+                                <Checkbox
+                                  disabled={loading}
+                                  checked={field.value?.includes(service)}
+                                  onCheckedChange={(checked) => {
+                                    return checked
+                                      ? field.onChange([
+                                          ...field.value,
+                                          service,
+                                        ])
+                                      : field.onChange(
+                                          field.value?.filter(
+                                            (value) => value !== service
+                                          )
+                                        );
+                                  }}
+                                />
+                              </FormControl>
+                              <FormLabel className='text-sm-regular md:text-md-regular'>
+                                {service}
+                              </FormLabel>
+                            </FormItem>
+                          )}
+                        />
+                      ))}
+                    </div>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button disabled={loading} className='mt-6 w-full md:mt-10'>
+                {loading ? <ClipLoader size={20} color='#fff' /> : 'Send'}
+              </Button>
+            </form>
+          </Form>
+          <FormStatusDialog
+            open={showDialog}
+            variant={variant}
+            loading={loading}
+            onOpenChange={setShowDialog}
           />
-          <Button disabled={loading} className='mt-6 w-full md:mt-10'>
-            {loading ? <ClipLoader size={20} color='#fff' /> : 'Send'}
-          </Button>
-        </form>
-      </Form>
-      <FormStatusDialog
-        open={showDialog}
-        variant={variant}
-        loading={loading}
-        onOpenChange={setShowDialog}
-      />
-    </Section>
+        </div>
+      </div>
+    </section>
   );
 };
 

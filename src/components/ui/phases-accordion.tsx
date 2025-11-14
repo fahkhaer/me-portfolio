@@ -6,8 +6,6 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from '@/src/components/ui/accordion';
-import { cn } from '@/src/lib/utils';
-
 
 type PhasesAccordionItemElement = React.ReactElement<PhasesAccordionItemProps>;
 
@@ -17,12 +15,14 @@ type PhasesAccordionProps = {
 
 const PhasesAccordion: React.FC<PhasesAccordionProps> = ({ children }) => {
   return (
-    <Accordion type='single' collapsible>
-      <div className='grid grid-cols-[2.5rem_auto] gap-x-4 md:grid-cols-[3rem_auto] md:gap-x-6'>
-        {React.Children.map(children, (child, idx) =>
-          React.cloneElement(child, { index: idx + 1 })
-        )}
-      </div>
+    <Accordion
+      type='single'
+      collapsible
+      className='w-full space-y-4'
+    >
+      {React.Children.map(children, (child, idx) =>
+        React.cloneElement(child, { index: idx + 1 })
+      )}
     </Accordion>
   );
 };
@@ -41,32 +41,24 @@ export const PhasesAccordionItem: React.FC<PhasesAccordionItemProps> = ({
   description,
 }) => {
   return (
-    <>
-      {/* left column */}
-      <div
-        className={cn(
-          'group relative mb-4 last:mb-0 md:mb-8 [&:nth-last-child(2)]:mb-0',
-          // target child
-          '[&:nth-last-child(2)>.line-decoration]:h-1/2'
-        )}
-      >
-        {/* line decoration */}
-        <div className='line-decoration absolute left-1/2 h-[calc(100%+1rem)] w-0.25 -translate-x-1/2 bg-neutral-800 group-first:top-1/2 md:h-[calc(100%+2rem)]' />
+    <AccordionItem value={`item-${index}`} className='border-b border-neutral-300 py-4'>
+      <AccordionTrigger className='flex w-full items-center justify-between gap-4'>
+        <div className='flex items-center gap-6'>
+          {/* number on left (01, 02, 03…) */}
+          <span className='text-lg font-semibold text-neutral-900 w-10'>
+            {String(index).padStart(2, '0')}
+          </span>
 
-        {/* index circle */}
-        <span className='flex-center bg-primary-300 text-neutral-25 md:text-md-semibold text-sm-semibold absolute inset-x-0 top-1/2 aspect-square -translate-y-1/2 rounded-full'>
-          {index}
-        </span>
-        {/* blur effect */}
-        <span className='flex-center absolute inset-x-0 top-1/2 aspect-square -translate-y-1/2 rounded-full shadow-[0_0_17px_rgba(0,147,221,0.6)] blur-3xl'>
-          {index}
-        </span>
-      </div>
-      {/* right column */}
-      <AccordionItem value={`item-${index}`}>
-        <AccordionTrigger>{title}</AccordionTrigger>
-        <AccordionContent>{description}</AccordionContent>
-      </AccordionItem>
-    </>
+          {/* title */}
+          <span className='text-xl font-semibold text-neutral-900'>
+            {title}
+          </span>
+        </div>
+      </AccordionTrigger>
+
+      <AccordionContent className='pl-16 pr-10 text-neutral-700 text-base leading-relaxed'>
+        {description}
+      </AccordionContent>
+    </AccordionItem>
   );
 };

@@ -1,8 +1,8 @@
 import { StaticImageData } from 'next/image';
 
-import project1Src from '../../public/images/project1.jpg';
-import project2Src from '../../public/images/project2.jpg';
-import project3Src from '../../public/images/project3.jpg';
+import project1Src from '../../public/images/project1.png';
+import project2Src from '../../public/images/project2.png';
+import project3Src from '../../public/images/project3.png';
 
 type Project = {
   imageSrc: StaticImageData;

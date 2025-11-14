@@ -10,7 +10,7 @@ function ServiceProcess() {
     <Section
       title='Let’s Clear Things Up'
       subtitle='I’ve answered a few questions that usually come up when working with a frontend developer like me.'
-      id='services-process'
+      id='services-process' className='bg-[#F5F5F5] py-20 '
     >
       {/* content */}
       <PhasesAccordion>
