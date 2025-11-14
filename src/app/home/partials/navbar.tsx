@@ -75,7 +75,7 @@ function Navbar() {
             <SheetClose />
           </Sheet>
         </motion.header>
-      <Hero />
+        {/* <Hero /> */}
       </div>
     </>
   );
