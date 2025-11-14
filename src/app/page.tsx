@@ -11,6 +11,7 @@ import Skills from './home/partials/skills';
 import Clients from './home/partials/clients';
 import Strength from './home/partials/strength';
 import { Footer } from './home/partials/footer';
+import Testi from './home/partials/testi';
 
 export default function Home() {
   return (
@@ -23,7 +24,7 @@ export default function Home() {
       <Strength />  
       <Projects />
       <Clients />
-      <Testimonial />
+      <Testi />
       <ServiceProcess />
       <ContactForm />
       <Footer />

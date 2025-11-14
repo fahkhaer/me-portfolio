@@ -19,9 +19,9 @@ export default function SkillsSection() {
       className='bg-[#9E385E00] py-20'
     >
       <Carousel>
-        <CarouselContent className=''>
+        <CarouselContent>
           {skillsData.map(({ title, subtitle, className, icon }) => (
-            <CarouselItem key={title} className='lg:basis-1/4'>
+            <CarouselItem variant='grid' key={title} className='lg:basis-1/4'>
               <div
                 className={cn(
                   `flex h-[260px] w-[215px] flex-col items-center rounded-[40px] border border-neutral-200 bg-white p-6 text-center shadow-sm`,

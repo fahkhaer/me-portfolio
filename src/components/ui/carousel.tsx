@@ -137,7 +137,7 @@ function CarouselContent({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       ref={carouselRef}
-      className='overflow-hidden'
+      className=''
       data-slot='carousel-content'
     >
       <div
@@ -152,23 +152,63 @@ function CarouselContent({ className, ...props }: React.ComponentProps<'div'>) {
   );
 }
 
-function CarouselItem({ className, ...props }: React.ComponentProps<'div'>) {
+function CarouselItem({
+  className,
+  variant = "default", 
+  cols = 1,
+  rows = 1,
+  children,
+  ...props
+}: React.ComponentProps<'div'> & {
+  variant?: 'default' | 'single' | 'grid';
+  cols?: number;
+  rows?: number;
+}) {
   const { orientation } = useCarousel();
+
+  const defaultClasses = cn(
+    "min-w-0 shrink-0 grow-0 basis-full md:basis-1/2 lg:basis-1/3",
+    orientation === "horizontal" ? "pl-5" : "pt-5",
+    className
+  );
+
+  const singleClasses = cn(
+    "min-w-0 shrink-0 grow-0 basis-full",
+    orientation === "horizontal" ? "pl-5" : "pt-0",
+    className
+  );
 
   return (
     <div
-      role='group'
-      aria-roledescription='slide'
-      data-slot='carousel-item'
-      className={cn(
-        'min-w-0 shrink-0 grow-0 basis-full md:basis-1/2 lg:basis-1/3',
-        orientation === 'horizontal' ? 'pl-5' : 'pt-5',
-        className
-      )}
+      role="group"
+      aria-roledescription="slide"
+      data-slot="carousel-item"
+      className={
+        variant === "default"
+          ? defaultClasses
+          : variant === "single"
+          ? singleClasses
+          : "px-5" 
+      }
       {...props}
-    />
+    >
+      {variant === "grid" ? (
+        <div
+          className={cn(
+            `grid gap-4`,
+            `grid-cols-${cols}`,
+            rows > 1 && `grid-rows-${rows}`
+          )}
+        >
+          {children}
+        </div>
+      ) : (
+        children
+      )}
+    </div>
   );
 }
+
 
 function CarouselPrevious(props: React.ComponentProps<typeof Button>) {
   const { scrollPrev, canScrollPrev } = useCarousel();

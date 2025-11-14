@@ -18,10 +18,14 @@ function Testimonials() {
       subtitle='Real words from clients, teammates, and mentors I’ve collaborated with on various projects.'
       id='testimonial'
     >
-      <Carousel>
+      {/* <Carousel>
         <CarouselContent>
-          {testimonialsData.map((testimonial, index) => (
-            <CarouselItem key={index}>
+         
+        </CarouselContent>
+        <CarouselNavigation />
+      </Carousel> */}
+       {testimonialsData.map((testimonial, index) => (
+            <div className='w-11' key={index}>
               <TestimonialCard
                 key={index}
                 rating={testimonial.rating}
@@ -30,11 +34,8 @@ function Testimonials() {
                 profileName={testimonial.profileName}
                 profileOccupation={testimonial.profileOccupation}
               />
-            </CarouselItem>
+            </div>
           ))}
-        </CarouselContent>
-        <CarouselNavigation />
-      </Carousel>
     </Section>
   );
 }

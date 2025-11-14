@@ -139,19 +139,21 @@ const ContactForm = () => {
           />
           <Form {...form}>
             <form
-              className='mx-auto max-w-180 space-y-5 rounded-4xl bg-white p-8 shadow-[0_4px_16px_rgba(0,0,0,0.1)] md:p-8'
+              className='mx-auto md:w-[612px] max-w-180 space-y-5 rounded-4xl bg-white p-8 shadow-[0_4px_16px_rgba(0,0,0,0.1)] md:p-8'
               onSubmit={form.handleSubmit(onSubmit)}
             >
-              <FormField
+              <FormField  
                 control={form.control}
+                
                 name='name'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Name</FormLabel>
-                    <Input
+                    <FormLabel className='text-sm-bold leading-7'>Name</FormLabel>
+                    <Input 
                       disabled={loading}
-                      placeholder='Input your name'
+                      placeholder={'Input your name'}
                       {...field}
+                      className='h-12'
                     />
                     <FormMessage />
                   </FormItem>
@@ -163,7 +165,7 @@ const ContactForm = () => {
                 name='email'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel className='text-sm-bold leading-7'>Email</FormLabel>
                     <Input
                       disabled={loading}
                       placeholder='Input your email'
@@ -179,8 +181,8 @@ const ContactForm = () => {
                 name='message'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Message</FormLabel>
-                    <Textarea
+                    <FormLabel className='text-sm-bold leading-7'>Message</FormLabel>
+                    <Textarea className='h-[134px] resize-none'
                       disabled={loading}
                       placeholder='Input your message'
                       {...field}
@@ -190,53 +192,7 @@ const ContactForm = () => {
                 )}
               />
 
-              <FormField
-                control={form.control}
-                name='services'
-                render={() => (
-                  <FormItem>
-                    <FormLabel>Services</FormLabel>
-                    <div className='mt-3 grid grid-cols-1 gap-y-3 md:mt-3.5 md:grid-cols-[repeat(2,max-content)] md:gap-x-9.25 md:gap-y-4'>
-                      {services.map((service) => (
-                        <FormField
-                          key={service}
-                          control={form.control}
-                          name='services'
-                          render={({ field }) => (
-                            <FormItem
-                              key={service}
-                              className='flex items-center gap-3'
-                            >
-                              <FormControl>
-                                <Checkbox
-                                  disabled={loading}
-                                  checked={field.value?.includes(service)}
-                                  onCheckedChange={(checked) => {
-                                    return checked
-                                      ? field.onChange([
-                                          ...field.value,
-                                          service,
-                                        ])
-                                      : field.onChange(
-                                          field.value?.filter(
-                                            (value) => value !== service
-                                          )
-                                        );
-                                  }}
-                                />
-                              </FormControl>
-                              <FormLabel className='text-sm-regular md:text-md-regular'>
-                                {service}
-                              </FormLabel>
-                            </FormItem>
-                          )}
-                        />
-                      ))}
-                    </div>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+            
               <Button disabled={loading} className='mt-6 w-full md:mt-10'>
                 {loading ? <ClipLoader size={20} color='#fff' /> : 'Send'}
               </Button>

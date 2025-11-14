@@ -20,7 +20,9 @@ const Projects = () => {
         </div>
       }
       id='projects'
-      title='Design to Code Accuracy'
+      title={<p className='display-xl-bold'>Design to 
+       <span className='text-primary-300'> Code Accuracy </span>
+       </p>}
       subtitle='We translated design mockups into pixel-perfect, responsive components, ensuring a smooth user experience across all devices.'
       className='py-20'
     >
