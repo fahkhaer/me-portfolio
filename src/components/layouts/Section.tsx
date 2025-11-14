@@ -28,7 +28,7 @@ const Section: React.FC<SectionProps> = ({
     variant === 'horizontal' || variant === 'horizontalWithRight';
 
   return (
-    <div className={cn('custom-container', className)} id={id}>
+    <div className={cn('px-30', className)} id={id}>
       {/* DEFAULT */}
       {variant === 'default' && (
         <div className='text-center flex flex-col gap-2'>

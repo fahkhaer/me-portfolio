@@ -24,11 +24,11 @@ export default function SkillsSection() {
             <CarouselItem variant='grid' key={title} className='lg:basis-1/4'>
               <div
                 className={cn(
-                  `flex h-[260px] w-[215px] flex-col items-center rounded-[40px] border border-neutral-200 bg-white p-6 text-center shadow-sm`,
+                  `flex h-[281px] w-[215px] flex-col items-center rounded-[40px] border border-neutral-200 bg-white p-6 text-center shadow-sm`,
                   className
                 )}
               >
-                <div className='mb-4 flex h-16 w-16 items-center justify-center rounded-full border bg-white shadow-sm'>
+                <div className='mb-3 p-2 flex size-16 items-center justify-center rounded-full bg-white shadow-sm'>
                   <Image
                     width={40}
                     height={40}

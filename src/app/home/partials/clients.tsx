@@ -38,7 +38,7 @@ function Clients() {
         id='clients'
         title='Experiences That Shaped Me!'
         subtitle='From startups to side projects, every step has been a chance to learn, build, and level up.'
-        className='bg-neutral-950 py-20 m-0'
+        className='bg-neutral-950 py-20 mx-auto'
       >
         {experiencesData.map((exp) => (
           <div key={exp.company} className='border-t border-neutral-800 pt-8'>

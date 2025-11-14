@@ -193,8 +193,8 @@ const ContactForm = () => {
               />
 
             
-              <Button disabled={loading} className='mt-6 w-full md:mt-10'>
-                {loading ? <ClipLoader size={20} color='#fff' /> : 'Send'}
+              <Button variant='secondary' disabled={loading} className='mt-6 w-full md:mt-10'>
+                {loading ? <ClipLoader size={20} color='#fff' /> : 'Lets Talk'}
               </Button>
             </form>
           </Form>

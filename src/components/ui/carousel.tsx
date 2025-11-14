@@ -252,8 +252,8 @@ function CarouselNavigation({
 }: React.ComponentProps<'div'>) {
   return (
     <div
-      className={cn(
-        'mt-6 flex items-center justify-center gap-3 md:mt-10',
+      className={cn( 
+        'mt-6 flex items-center  justify-center gap-3 md:mt-10',
         className
       )}
       {...props}
