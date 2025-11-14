@@ -20,20 +20,20 @@ export const testimonialsData: Testimonial[] = [
     profileName: 'Sarah Tan',
     profileOccupation: 'Product Manager at Finovate',
   },
-  // {
-  //   rating: 5,
-  //   description:
-  //     'The UI/UX design provided by Syntax completely transformed our platform. Our users love the new interface, and engagement rates have significantly increased',
-  //   profileSrc: profile2Src,
-  //   profileName: 'Sarah Thompson',
-  //   profileOccupation: 'Head of Product at E-Hub',
-  // },
-  // {
-  //   rating: 4,
-  //   description:
-  //     'Cybersecurity was a major concern for us, but Syntax delivered a secure and scalable solution that gave us peace of mind. Their team is truly professional and reliable.',
-  //   profileSrc: profile3Src,
-  //   profileName: 'David Collins',
-  //   profileOccupation: 'CTO of MedTech Innovations',
-  // },
+  {
+    rating: 5,
+    description:
+      'The UI/UX design provided by Syntax completely transformed our platform. Our users love the new interface, and engagement rates have significantly increased',
+    profileSrc: profile2Src,
+    profileName: 'Sarah Thompson',
+    profileOccupation: 'Head of Product at E-Hub',
+  },
+  {
+    rating: 4,
+    description:
+      'Cybersecurity was a major concern for us, but Syntax delivered a secure and scalable solution that gave us peace of mind. Their team is truly professional and reliable.',
+    profileSrc: profile3Src,
+    profileName: 'David Collins',
+    profileOccupation: 'CTO of MedTech Innovations',
+  },
 ];

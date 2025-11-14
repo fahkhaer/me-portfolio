@@ -41,7 +41,7 @@ function Clients() {
         className='bg-neutral-950 py-20 mx-auto'
       >
         {experiencesData.map((exp) => (
-          <div key={exp.company} className='border-t border-neutral-800 pt-8'>
+          <div key={exp.company} className='border-t border-neutral-800 py-8'>
             <div className='grid gap-6 md:grid-cols-[150px_1fr_1fr] md:items-center'>
               {/* year + role */}
               <div>

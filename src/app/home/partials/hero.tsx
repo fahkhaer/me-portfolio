@@ -29,12 +29,12 @@ const Hero = () => {
       {/* Tengah - Hero Text */}
       <div className='relative flex flex-col items-center text-center'>
         {/* Junior */}
-        <p className='font-bonheur absolute -top-60 -left-95 z-10 -rotate-12 text-[113px] leading-none text-white'>
+        <p className='font-bonheur absolute -top-60 -left-95 z-20 -rotate-12 text-[113px] leading-none text-white'>
           Junior
         </p>
 
         {/* FRONTEND DEVELOPER */}
-        <div className='font-anton text-secondary-100 absolute  z-50 -top-[326px] translate-y-25 leading-[0.9]'>
+        <div className='font-anton text-secondary-100 absolute  z-10 -top-[326px] translate-y-25 leading-[0.9]'>
           <p className='text-[9vw] md:text-[160px]'>FRONTEND</p>
           <p className='text-[8vw] md:text-[140px]'>DE<span className='text-[8vw] md:text-[140px] text-transparent stroke-2 stroke-yellow mix-blend-overlay'>VELO</span>PER </p>
         </div>
