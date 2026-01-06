@@ -15,7 +15,7 @@ export const testimonialsData: Testimonial[] = [
   {
     rating: 5,
     description:
-      '“Working with Edwin Anderson was a smooth experience from start to finish. He translated our design into clean, responsive code and even suggested improvements we hadn’t thought of. Highly recommended!”',
+      '“Working with Latifahtul Khaerani was a smooth experience from start to finish. He translated our design into clean, responsive code and even suggested improvements we hadn’t thought of. Highly recommended!”',
     profileSrc: profile1Src,
     profileName: 'Sarah Tan',
     profileOccupation: 'Product Manager at Finovate',

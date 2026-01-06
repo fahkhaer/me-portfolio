@@ -7,7 +7,7 @@ export const Footer = () => {
     <section className='text-neutral-25 flex h-22 items-center justify-between bg-neutral-950 px-32'>
       <div>
         <p className='text-md-regular'>
-          © 2025 Edwin Anderson. All rights reserved.
+          © 2025 Latifahtul Khaerani. All rights reserved.
         </p>
       </div>
       <div className='flex gap-4'>

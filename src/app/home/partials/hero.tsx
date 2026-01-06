@@ -74,7 +74,6 @@ const Hero = () => {
         transition={{ duration: 1, ease: 'easeOut', delay: 0.7 }}
         whileHover={{ scale: 1.05, rotate: 2 }}
       >
-        <Image src='/images/hero.png' alt='hero-image' width={600} height={720} className='object-contain' />
       </motion.div>
 
       {/* Scroll down */}
@@ -106,7 +105,12 @@ const Hero = () => {
         transition={{ duration: 1, delay: 1 }}
       >
         <Statistics />
-        <Button className='bg-secondary-100 flex h-auto w-56 items-center justify-between rounded-full px-4 hover:bg-[#D9A23F]'>
+        <Button
+             onClick={() => {
+            const section = document.getElementById('strengths');
+            if (section) section.scrollIntoView({ behavior: 'smooth' });
+          }}
+        className='bg-secondary-100 flex h-auto w-56 items-center justify-between rounded-full px-4 hover:bg-[#D9A23F]'>
           <p className='text-neutral-950 text-md-semibold my-2 leading-8'>Contact Me</p>
           <div className='flex size-8 items-center justify-center rounded-full bg-neutral-950'>
             <Icon icon='ic:round-arrow-forward' width='36' height='36' className='text-white' />
@@ -125,7 +129,7 @@ const Hero = () => {
           <div>
             <Icon icon='fluent:mic-24-filled' className='size-14 rounded-full border border-[#B76080] p-1' />
           </div>
-          <p className='text-xl-bold'>Hi, I'm Edwin Anderson</p>
+          <p className='text-xl-bold'>Hi, I'm Latifahtul Khaerani</p>
           <p className='text-lg-medium leading-relaxed'>
             A frontend developer passionate about creating seamless digital
             experiences that are fast, responsive, and user-friendly.
