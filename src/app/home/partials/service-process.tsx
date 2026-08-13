@@ -9,7 +9,7 @@ function ServiceProcess() {
   return (
     <Section
       title='Let’s Clear Things Up'
-      subtitle='I’ve answered a few questions that usually come up when working with a frontend developer like me.'
+      subtitle='A few things you might want to know before working with me.'
       id='services-process' className='bg-[#F5F5F5] mx-auto py-20 '
     >
       {/* content */}

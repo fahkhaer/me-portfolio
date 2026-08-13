@@ -15,7 +15,7 @@ export default function SkillsSection() {
     <Section
       id='skills'
       title='Code, Design, and Everything in Between'
-      subtitle='These are the technologies that power my workflow and bring ideas to life.'
+      subtitle='Technologies I use to turn ideas, designs, and problems into working digital products.'
       className='bg-[#9E385E00] py-20'
     >
       <Carousel>

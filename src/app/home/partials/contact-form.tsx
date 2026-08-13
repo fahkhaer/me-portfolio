@@ -104,8 +104,7 @@ const ContactForm = () => {
           <div>
             <p className='display-xl-bold'>Let’s Work Together</p>
             <p className='text-md-medium'>
-              Have a project in mind or just want to say hi? Drop me a message —
-              I’d love to hear from you.
+              Looking for a developer for your next project? I'd love to hear what you're building. I'm open to remote opportunities and collaborations with teams around the world.
             </p>
           </div>
 

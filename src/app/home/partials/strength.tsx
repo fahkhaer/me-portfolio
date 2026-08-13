@@ -39,8 +39,8 @@ function Strength() {
   return (
     <Section
       className='py-20'
-      title='More Than Just Code'
-      subtitle='We care about design, performance, and user experience all in one.'
+      title='WHAT I BRING'
+      subtitle='Beyond writing code, I care about how a product looks, feels, and works.'
       id='strengths'
     >
       {/* container */}
@@ -84,39 +84,7 @@ function Strength() {
           </div>
         </motion.div>
 
-        {/* Without Me */}
-        <motion.div
-          className='bg-secondary-100 flex flex-col items-center rounded-2xl p-8 text-center'
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-        >
-          <p className='text-lg-bold text-neutral-950'>Without Me</p>
-
-          <Icon
-            icon='ix:user-profile-filled'
-            width='100'
-            height='100'
-            className='mt-6'
-          />
-
-          {/* text */}
-          <div className='flex flex-col items-center space-y-6 pt-8'>
-            {other.map((item, index) => (
-              <motion.div
-                key={index}
-                className='flex items-center gap-3'
-                custom={index}
-                initial="hidden"
-                animate="visible"
-                variants={listVariant}
-              >
-                <X className='text-[#E5352D]' />
-                <p className='text-lg-semibold'>{item}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+    
       </div>
     </Section>
   );

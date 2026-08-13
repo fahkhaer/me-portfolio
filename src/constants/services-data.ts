@@ -7,21 +7,21 @@ type Service = {
 
 export const servicesData: Service[] = [
   {
-    logo: '⚙️',
-    title: 'COMPONENT-BASED DEVELOPMENT',
+    logo: '🎨',
+    title: 'FRONTEND DEVELOPMENT',
     subtitle:
-      'Reusable, scalable code built with modern frameworks like React or Vue.',
+      'Building responsive and reusable interfaces with React, Next.js, TypeScript, and Tailwind CSS.',
   },
   {
-    logo: '🎨',
-    title: 'PIXEL-PERFECT UI IMPLEMENTATION',
+    logo: '⚙️',
+    title: 'FULLSTACK DEVELOPMENT',
     subtitle:
-      'Translating design into high-fidelity user interfaces with attention to detail.',
+      'Connecting intuitive interfaces with APIs, databases, authentication, and backend services.',
   },
   {
     logo: '📱',
-    title: 'RESPONSIVE & ACCESSIBLE DESIGN',
+    title: 'AI & MOBILE EXPERIENCES',
     subtitle:
-      'Optimized layouts that work seamlessly across all screen sizes and devices.',
+      'Exploring AI-powered features and building mobile applications with modern technologies.',
   },
 ];

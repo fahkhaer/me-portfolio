@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 const Desc = () => {
   const fullText =
-    'As frontend developers, we bring designs to life with clean, responsive code that blends creativity 🎨 with usability 🌟.';
+    'From Figma designs to fullstack applications, I build responsive, interactive, and user-focused digital experiences.';
   const [displayText, setDisplayText] = useState('');
 
   useEffect(() => {
@@ -12,15 +12,15 @@ const Desc = () => {
       setDisplayText((prev) => prev + fullText[index]);
       index++;
       if (index >= fullText.length) clearInterval(interval);
-    }, 20); 
+    }, 20);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="py-20 text-center">
-      <p className="custom-container display-lg-medium -tracking-tight">
+    <div className='py-20 text-center'>
+      <p className='custom-container display-lg-medium -tracking-tight'>
         {displayText}
-        <span className="animate-pulse">|</span>
+        <span className='animate-pulse'>|</span>
       </p>
     </div>
   );

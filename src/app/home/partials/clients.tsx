@@ -4,28 +4,28 @@ import React from 'react';
 
 const experiencesData = [
   {
-    year: '2025 - Present',
-    role: 'Frontend Developer',
+    year: '2025',
+    role: 'Career Transition',
     company: 'airbnb',
-    logo: '/icons/airbnb.png',
+    logo: '/images/bc.png',
     description:
-      'Built responsive web interfaces using modern frameworks like React.js, ensuring seamless integration with backend systems. Optimized performance, implemented accessible designs, and delivered clean, reusable code to enhance user experience and scalability.',
+      'Started my professional journey in broadcasting before transitioning into software development and technology.',
   },
   {
-    year: '2025 - Present',
+    year: '2025',
     role: 'Frontend Developer',
-    company: 'Airtasker',
-    logo: '/icons/air.png',
+    company: 'WPH',
+    logo: '/images/image.png',
     description:
-      'Built responsive web interfaces using modern frameworks like React.js, ensuring seamless integration with backend systems. Optimized performance, implemented accessible designs, and delivered clean, reusable code to enhance user experience and scalability.',
+      'Strengthened my frontend fundamentals through hands-on projects focused on translating Figma designs into responsive web interfaces using React, TypeScript, and Tailwind CSS.',
   },
   {
-    year: '2025 - Present',
-    role: 'Frontend Developer',
-    company: 'Slack',
-    logo: '/icons/slack.png',
+    year: '2026',
+    role: 'Full Stack JavaScript Immersive Program',
+    company: 'Hacktiv8',
+    logo: '/images/h8.png',
     description:
-      'Built responsive web interfaces using modern frameworks like React.js, ensuring seamless integration with backend systems. Optimized performance, implemented accessible designs, and delivered clean, reusable code to enhance user experience and scalability.',
+      'Completed an intensive Full Stack JavaScript program covering frontend, backend, databases, APIs, mobile development, TypeScript, Next.js, and cloud deployment.',
   },
 ];
 
@@ -36,9 +36,9 @@ function Clients() {
       <Section
         variant='horizontal'
         id='clients'
-        title='Experiences That Shaped Me!'
-        subtitle='From startups to side projects, every step has been a chance to learn, build, and level up.'
-        className='bg-neutral-950 py-20 mx-auto'
+        title='From Broadcasting to Software'
+        subtitle='A career transition driven by curiosity, technology, and the desire to build what comes next.'
+        className='mx-auto bg-neutral-950 py-20'
       >
         {experiencesData.map((exp) => (
           <div key={exp.company} className='border-t border-neutral-800 py-8'>
@@ -53,7 +53,7 @@ function Clients() {
 
               {/* logo */}
               <div className='flex justify-center'>
-                <div className='flex h-[70px] w-[180px] items-center justify-center rounded-3xl border border-neutral-800 bg-[#101010] p-4'>
+                <div className='flex h-[70px] w-[180px] items-center justify-center rounded-3xl border border-neutral-800 bg-[white] p-4'>
                   <Image
                     src={exp.logo}
                     alt={`${exp.company} logo`}

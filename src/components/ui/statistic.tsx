@@ -5,16 +5,16 @@ type Statistic = {
 
 const statistics: Statistic[] = [
   {
-    data: '2+',
-    info: 'Years Experience',
+    data: '2026',
+    info: 'Full Stack Journey',
   },
   {
-    data: '99%',
-    info: 'Client Satisfaction',
+    data: '30+',
+    info: 'Projects & Challenges',
   },
   {
-    data: '3',
-    info: 'Project Delivered',
+    data: 'React',
+    info: 'Frontend Focus',
   },
   {
     data: '50',

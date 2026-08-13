@@ -7,22 +7,22 @@ export const serviceProcessData: ServiceProcessItem[] = [
   {
     title: 'What technologies do you work with?',
     description:
-      ' I mainly work with HTML, CSS, JavaScript, and frameworks like React, Next.js, and Vue. I also have experience using Tailwind CSS, TypeScript, and working with APIs.',
+      'I primarily work with React, Next.js, TypeScript, Tailwind CSS, Node.js, Express.js, PostgreSQL, and MongoDB. I also have experience with React Native and modern API integrations.',
   },
   {
-    title: 'Do you work on freelance or remote projects?',
-    description: ' ',
+    title: 'Are you open to remote opportunities?',
+    description: 'Yes. I am actively open to remote opportunities, including roles with international teams',
   },
   { 
-    title: 'Can you convert Figma or Sketch designs into code?',
-    description: ' ',
+    title: 'Can you turn Figma designs into code?',
+    description: 'Absolutely. Translating Figma designs into responsive and reusable interfaces is one of my strongest areas of interest.',
   },
   {
-    title: 'Do you collaborate with backend developers or teams?',
-    description: ' ',
+    title: 'Can you work across frontend and backend?',
+    description: 'Yes. While frontend development is my strongest area, I also work with backend APIs, databases, authentication, and fullstack application architecture.',
   },
   {
-    title: 'Are you available for full-time roles?',
-    description: ' ',
+    title: 'Can you build mobile applications too?',
+    description: 'Yes. I have experience building mobile applications using React Native and enjoy working across web and mobile platforms.',
   },
 ];
