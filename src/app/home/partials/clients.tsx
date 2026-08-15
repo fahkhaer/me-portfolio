@@ -53,13 +53,13 @@ function Clients() {
 
               {/* logo */}
               <div className='flex justify-center'>
-                <div className='flex h-[70px] w-[180px] items-center justify-center rounded-3xl border border-neutral-800 bg-[white] p-4'>
+                <div className='flex h-[70px] w-[180px] items-center justify-center overflow-hidden rounded-3xl border border-neutral-800 bg-white p-4'>
                   <Image
                     src={exp.logo}
                     alt={`${exp.company} logo`}
-                    width={100}
-                    height={40}
-                    className='object-contain'
+                    width={120}
+                    height={45}
+                    className='h-auto max-h-[70px] w-auto max-w-[120px] object-contain'
                   />
                 </div>
               </div>
