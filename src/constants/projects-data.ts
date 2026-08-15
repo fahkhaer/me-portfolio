@@ -5,11 +5,11 @@ import foody from '../../public/images/foody.png';
 import resto from '../../public/images/resto.png';
 import bliin from '../../public/images/bliin.png';
 import movie from '../../public/images/cosfit.png';
-import booky from '../../public/images/project3.png';
+import booky from '../../public/images/booky.png';
 import mobileapp from '../../public/images/project3.png';
 import tripsync from '../../public/images/tripsync.png';
 import copypastel from '../../public/images/copypastel.png';
-import sociality from '../../public/images/project3.png';
+import sociality from '../../public/images/sociality.png';
 import compro from '../../public/images/compro.png';
 import porto from '../../public/images/porto.png';
 import cms from '../../public/images/cms.png';
@@ -85,18 +85,21 @@ export const projectsData: Project[] = [
   {
     imageSrc: resto,
     name: 'Restaurant App',
+    videoSrc: '/videos/resto.mov',
     description: 'Frontend • React • Web Application',
     link: 'https://restaurant-app-n7yo.vercel.app/',
   },
   {
     imageSrc: booky,
     name: 'Booky',
+    videoSrc: '/videos/booky.mov',
     description: 'Frontend • React • TypeScript • React Query',
     link: 'https://my-library-app-ebon.vercel.app/',
   },
   {
     imageSrc: sociality,
     name: 'Sociality',
+    videoSrc: '/videos/sociality.mov',
     description: 'Frontend • Next.js • TypeScript',
     link: 'https://social-media-tsy7.vercel.app/',
   },
