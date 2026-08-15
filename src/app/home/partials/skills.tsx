@@ -9,6 +9,7 @@ import {
   CarouselNavigation,
 } from '@/src/components/ui/carousel';
 import { cn } from '@/src/lib/utils';
+import { Icon } from '@iconify/react';
 
 export default function SkillsSection() {
   return (
@@ -16,36 +17,29 @@ export default function SkillsSection() {
       id='skills'
       title='Code, Design, and Everything in Between'
       subtitle='Technologies I use to turn ideas, designs, and problems into working digital products.'
-      className='bg-[#9E385E00] py-20'
+      className='py-20 overflow-hidden'
     >
       <Carousel>
-        <CarouselContent>
+        <CarouselContent className='-ml-4'>
           {skillsData.map(({ title, subtitle, className, icon }) => (
-            <CarouselItem variant='grid' key={title} className='lg:basis-1/4'>
+            <CarouselItem
+              key={title}
+              className='basis-full pl-4 sm:basis-1/2 lg:basis-1/4'
+            >
               <div
                 className={cn(
-                  `flex h-[281px] w-[215px] flex-col items-center rounded-[40px] border border-neutral-200 bg-white p-6 text-center shadow-sm`,
+                  'flex min-h-[281px] w-full flex-col items-center rounded-[40px] border border-neutral-200 bg-white p-6 text-center shadow-sm',
                   className
                 )}
               >
-                <div className='mb-3 p-2 flex size-16 items-center justify-center rounded-full bg-white shadow-sm'>
-                  <Image
-                    width={40}
-                    height={40}
-                    src={`/icons/${icon}.png`}
-                    alt={`logo-${icon}`}
-                    className={
-                      ['css', 'react'].includes(icon) ? 'bg-[#F5F5F5]' : ''
-                    }
-                  />
+                <div className='mb-3 flex size-16 items-center justify-center rounded-full bg-white p-2 shadow-sm'>
+                  <Icon icon={icon} width={40} height={40} />
                 </div>
 
-                {/* TITLE */}
                 <h3 className='mb-2 text-lg font-semibold text-neutral-900'>
                   {title}
                 </h3>
 
-                {/* SUBTITLE */}
                 <p className='text-sm leading-relaxed text-neutral-700'>
                   {subtitle}
                 </p>

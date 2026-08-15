@@ -1,130 +1,81 @@
 'use client';
+
 import Section from '@/src/components/layouts/Section';
 import { Icon } from '@iconify/react';
-import Image from 'next/image';
-import React from 'react';
 import { motion } from 'framer-motion';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNavigation,
-} from '@/src/components/ui/carousel';
-import { testimonialsData } from '@/src/constants/testimonials-data';
 
-function Testi() {
+const goals = [
+  {
+    icon: 'solar:global-bold',
+    title: 'REMOTE OPPORTUNITIES',
+    description:
+      'Open to remote opportunities and international teams where I can contribute, learn, and grow as a developer.',
+  },
+  {
+    icon: 'solar:rocket-bold',
+    title: 'CONTINUOUSLY LEARNING',
+    description:
+      'Exploring new technologies across fullstack development, mobile applications, and AI-powered experiences.',
+  },
+  {
+    icon: 'solar:lightbulb-bold',
+    title: 'BUILDING MEANINGFUL PRODUCTS',
+    description:
+      'I enjoy turning ideas into useful digital products that solve real problems and create better user experiences.',
+  },
+];
+
+function WhatNext() {
   return (
     <Section
       className='py-20'
-      title='What They Say About Working With Me'
-      subtitle='Real words from clients, teammates, and mentors I’ve collaborated with on various projects.'
-      id='testimonial'
+      title="WHAT'S NEXT"
+      subtitle="I'm always looking for new challenges, meaningful products, and opportunities to grow as a developer."
+      id='next'
     >
-      <Carousel className='overview-hidden'>
-        <CarouselContent>
-          {testimonialsData.map((testimonial, index) => (
-            <CarouselItem key={index} variant='single'>
-              <motion.div
-                className='relative flex w-full justify-center'
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: 'easeOut', delay: index * 0.2 }}
-                whileHover={{ scale: 1.03 }}
-              >
-                {/* content */}
-                <motion.div
-                  className='bg-primary-300 z-50 relative flex h-auto flex-col rounded-4xl px-10 py-8'
-                  initial='hidden'
-                  animate='visible'
-                  variants={{
-                    hidden: {},
-                    visible: { transition: { staggerChildren: 0.1 } },
-                  }}
-                >
-                  <motion.div
-                    className='mb-6 flex flex-col justify-center gap-1'
-                    variants={{
-                      hidden: { opacity: 0 },
-                      visible: { opacity: 1 },
-                    }}
-                  >
-                    {/* Stars */}
-                    <motion.div
-                      className='flex justify-center'
-                      variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.05 } } }}
-                    >
-                      {Array.from({ length: testimonial.rating }).map((_, i) => (
-                        <motion.span
-                          key={i}
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.3, delay: i * 0.1 }}
-                        >
-                          <Icon
-                            icon='line-md:star-filled'
-                            className='text-3xl text-yellow-400'
-                          />
-                        </motion.span>
-                      ))}
-                    </motion.div>
-
-                    {/* Description */}
-                    <motion.p
-                      className='display-xs-semibold text-neutral-25 pt-2 text-center leading-8'
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.5 }}
-                    >
-                      {testimonial.description}
-                    </motion.p>
-
-                    {/* Profile */}
-                    <motion.div
-                      className='mt-8 flex flex-col items-center'
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.7 }}
-                    >
-                      <Image
-                        src={testimonial.profileSrc}
-                        alt={testimonial.profileName}
-                        width={64}
-                        height={64}
-                        className='mb-4 rounded-full'
-                      />
-                      <p className='text-lg-semibold text-neutral-25'>
-                        {testimonial.profileName}
-                      </p>
-                      <p className='text-md-medium text-neutral-25'>
-                        {testimonial.profileOccupation}
-                      </p>
-                    </motion.div>
-                  </motion.div>
-                </motion.div>
-
-                {/* shadow 1 */}
-                <motion.div
-                  className='absolute z-10 -bottom-5 h-[40px] w-[95%] rounded-3xl bg-[#D4A0B3]'
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 0.5 }}
+      <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
+        {goals.map((goal, index) => (
+          <motion.div
+            key={goal.title}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.6,
+              delay: index * 0.1,
+            }}
+            whileHover={{ y: -8 }}
+            className='group relative'
+          >
+            {/* Main card */}
+            <div className='bg-primary-300 relative z-20 flex min-h-[320px] flex-col rounded-[32px] p-8'>
+              {/* Icon */}
+              <div className='mb-8 flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-sm'>
+                <Icon
+                  icon={goal.icon}
+                  className='text-primary-500 text-3xl'
                 />
+              </div>
 
-                {/* shadow 2 */}
-                <motion.div
-                  className='absolute -bottom-6 h-[30px] w-[90%] translate-y-4 rounded-3xl bg-[#B7608033]'
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                />
-              </motion.div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselNavigation className='pt-8' />
-      </Carousel>
+              {/* Content */}
+              <h3 className='text-xl font-bold text-white'>
+                {goal.title}
+              </h3>
+
+              <p className='mt-4 text-base leading-7 text-white/80'>
+                {goal.description}
+              </p>
+            </div>
+
+            {/* Decorative layers */}
+            <div className='absolute top-3 left-3 z-10 h-full w-full rounded-[32px] bg-[#D4A0B3]' />
+
+            <div className='absolute top-6 left-6 h-full w-full rounded-[32px] bg-[#B7608033]' />
+          </motion.div>
+        ))}
+      </div>
     </Section>
   );
 }
 
-export default Testi;
+export default WhatNext;

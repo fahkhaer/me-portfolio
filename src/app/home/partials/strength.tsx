@@ -1,40 +1,36 @@
 'use client';
+
 import Section from '@/src/components/layouts/Section';
 import { Icon } from '@iconify/react';
-import { X } from 'lucide-react';
-import Image from 'next/image';
-import React from 'react';
 import { motion } from 'framer-motion';
 
 function Strength() {
-  const skills = [
-    'React Expert',
-    'Precise Website Implementation',
-    'TypeScript Proficiency',
-    'Clean, Maintainable Code',
-    'Responsive Website Development',
-    'Performance Optimization',
-    'UI Design Proficiency (Figma)',
+  const strengths = [
+    {
+      icon: 'solar:user-heart-bold',
+      title: 'User-Focused',
+      description:
+        'I build interfaces with usability, accessibility, and user experience in mind.',
+    },
+    {
+      icon: 'solar:palette-bold',
+      title: 'Design to Code',
+      description:
+        'I turn Figma designs into responsive and high-fidelity web interfaces.',
+    },
+    {
+      icon: 'solar:code-square-bold',
+      title: 'Clean & Reusable',
+      description:
+        'I prefer modular components and maintainable code that can grow with the product.',
+    },
+    {
+      icon: 'solar:rocket-bold',
+      title: 'Always Learning',
+      description:
+        'From frontend to fullstack, mobile, and AI, I keep expanding my technical range.',
+    },
   ];
-  const other = [
-    'Basic React Knowledge',
-    'Inconsistent Design Translation',
-    'Little to No TypeScript Knowledge',
-    'Unstructured Code',
-    'Inconsistent Responsiveness',
-    'Slow and Heavy Websites',
-    'No Design Skills',
-  ];
-
-  // Variants untuk daftar item muncul dengan stagger
-  const listVariant = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: { delay: i * 0.1 },
-    }),
-  };
 
   return (
     <Section
@@ -43,48 +39,38 @@ function Strength() {
       subtitle='Beyond writing code, I care about how a product looks, feels, and works.'
       id='strengths'
     >
-      {/* container */}
-      <div className='grid gap-8 md:grid-cols-2'>
-        {/* With Me */}
-        <motion.div
-          className='flex flex-col items-center rounded-2xl bg-white p-8 text-center shadow-sm'
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-        >
-          <p className='text-lg-bold text-neutral-950'>With Me</p>
+      <div className='grid gap-6 md:grid-cols-2'>
+        {strengths.map((strength, index) => (
+          <motion.div
+            key={strength.title}
+            className='rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm'
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{
+              duration: 0.6,
+              delay: index * 0.1,
+              ease: 'easeOut',
+            }}
+          >
+            <div className='bg-primary-100 flex h-14 w-14 items-center justify-center rounded-full'>
+              <Icon
+                icon={strength.icon}
+                width='28'
+                height='28'
+                className='text-primary-600'
+              />
+            </div>
 
-          <Image
-            src='/images/hero.png'
-            alt='hero-image'
-            width={100}
-            height={100}
-            className='bg-primary-300 mt-6 rounded-full'
-          />
+            <h3 className='text-lg-bold mt-6 text-neutral-950'>
+              {strength.title}
+            </h3>
 
-          {/* text */}
-          <div className='flex flex-col items-center space-y-6 pt-8'>
-            {skills.map((skill, index) => (
-              <motion.div
-                key={index}
-                className='flex items-center gap-3'
-                custom={index}
-                initial="hidden"
-                animate="visible"
-                variants={listVariant}
-              >
-                <Icon
-                  icon='material-symbols:check-rounded'
-                  width='24'
-                  height='24'
-                />
-                <p className='text-lg-semibold'>{skill}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-    
+            <p className='text-md-regular mt-3 leading-relaxed text-neutral-600'>
+              {strength.description}
+            </p>
+          </motion.div>
+        ))}
       </div>
     </Section>
   );
