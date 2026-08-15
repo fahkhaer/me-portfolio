@@ -17,7 +17,7 @@ const Desc = () => {
   }, []);
 
   return (
-    <div className='py-20 text-center'>
+    <div id='about' className='py-20 text-center'>
       <p className='custom-container display-lg-medium -tracking-tight'>
         {displayText}
         <span className='animate-pulse'>|</span>

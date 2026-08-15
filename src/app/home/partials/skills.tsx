@@ -14,7 +14,7 @@ import { Icon } from '@iconify/react';
 export default function SkillsSection() {
   return (
     <Section
-      id='skills'
+      id='skill'
       title='Code, Design, and Everything in Between'
       subtitle='Technologies I use to turn ideas, designs, and problems into working digital products.'
       className='py-20 overflow-hidden'

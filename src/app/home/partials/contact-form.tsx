@@ -8,7 +8,7 @@ import { ArrowUpRight, Github, Linkedin, Mail } from 'lucide-react';
 
 const ContactForm = () => {
   return (
-    <section className='relative px-30 py-20'>
+    <section id='contact' className='relative px-30 py-20'>
       <div className='flex justify-around gap-12'>
         {/* LEFT */}
         <div className='flex flex-col gap-10'>
@@ -53,7 +53,7 @@ const ContactForm = () => {
 
             {/* Email */}
             <Link
-              href='mailto:your-email@example.com'
+              href='mailto:khaeranifah@gmail.com'
               className='group hover:border-primary-300 hover:bg-primary-50 flex items-center justify-between rounded-2xl border border-neutral-200 p-4 transition'
             >
               <div className='flex items-center gap-4'>
@@ -76,7 +76,7 @@ const ContactForm = () => {
 
             {/* LinkedIn */}
             <Link
-              href='https://www.linkedin.com/'
+              href='https://www.linkedin.com/in/latifahtul-khaerani-a-2793532a5/'
               target='_blank'
               rel='noopener noreferrer'
               className='group hover:border-primary-300 hover:bg-primary-50 flex items-center justify-between rounded-2xl border border-neutral-200 p-4 transition'
@@ -101,7 +101,7 @@ const ContactForm = () => {
 
             {/* GitHub */}
             <Link
-              href='https://github.com/'
+              href='https://github.com/latifahkhaerani'
               target='_blank'
               rel='noopener noreferrer'
               className='group hover:border-primary-300 hover:bg-primary-50 flex items-center justify-between rounded-2xl border border-neutral-200 p-4 transition'

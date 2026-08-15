@@ -38,7 +38,7 @@ export const projectsData: Project[] = [
   {
     imageSrc: bliin,
     name: 'Bliin',
-    videoSrc: '/videos/bliin.mov',
+    
     description: 'Fullstack • E-commerce • Next.js',
     link: 'https://bliin.vercel.app',
   },
@@ -51,7 +51,7 @@ export const projectsData: Project[] = [
   {
     imageSrc: copypastel,
     name: 'Copy Pastel',
-    videoSrc: '/videos/porto.mov',
+
     description: 'Frontend • E-commerce • HTML • CSS',
     link: 'https://copy-pastel.vercel.app/',
   },

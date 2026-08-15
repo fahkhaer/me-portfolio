@@ -21,11 +21,11 @@ const experiencesData = [
   },
   {
     year: '2026',
-    role: 'Full Stack JavaScript Immersive Program',
+    role: 'Full Stack Developer',
     company: 'Hacktiv8',
     logo: '/images/h8.png',
     description:
-      'Completed an intensive Full Stack JavaScript program covering frontend, backend, databases, APIs, mobile development, TypeScript, Next.js, and cloud deployment.',
+      'Completed an intensive Full Stack JavaScript Immersive Program (FSJS) covering frontend, backend, databases, APIs, mobile development, TypeScript, Next.js, and cloud deployment.',
   },
 ];
 

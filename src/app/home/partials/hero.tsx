@@ -32,8 +32,10 @@ const Hero = () => {
       </motion.div>
 
       {/* Tengah - Hero Text */}
+
       <div className='relative flex flex-col items-center text-center'>
         {/* Junior */}
+
         <motion.p
           className='font-bonheur absolute -top-60 -left-95 z-20 -rotate-12 text-[113px] leading-none text-white'
           initial={{ opacity: 0, y: -50 }}
@@ -45,19 +47,19 @@ const Hero = () => {
 
         {/* FRONTEND DEVELOPER tetap aman */}
         <div className='font-anton text-secondary-100 absolute -top-[326px] z-10 translate-y-25 leading-[0.9]'>
-          <p className='text-[9vw] md:text-[160px]'>SOFTWARE</p>
+          <p className='text-[9vw] md:text-[160px]'>FULLSTACK</p>
           <p className='text-[8vw] md:text-[140px]'>
-            ENG
+            DEV
             <span className='stroke-yellow stroke-2 text-[8vw] text-transparent mix-blend-overlay md:text-[140px]'>
-              INE
+              ELO
             </span>
-            ER
+            PER
           </p>
         </div>
 
         {/* Available for Hire */}
         <motion.div
-          className='absolute -top-80 mt-10 flex items-center gap-3'
+          className='absolute -top-85 mt-10 flex items-center gap-3'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.3 }}
@@ -79,12 +81,21 @@ const Hero = () => {
 
       {/* Hero Image hover */}
       <motion.div
-        className='absolute bottom-0 left-1/2 -translate-x-1/2'
+        className='absolute top-67 left-1/2 z-0 w-[350px] -translate-x-1/2 md:w-[420px] lg:w-[480px]'
         initial={{ y: 200, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, ease: 'easeOut', delay: 0.7 }}
-        whileHover={{ scale: 1.05, rotate: 2 }}
-      ></motion.div>
+        whileHover={{ scale: 1.02 }}
+      >
+        <Image
+          src='/images/lala.png'
+          alt='Latifah'
+          width={480}
+          height={480}
+          priority
+          className='h-auto w-full object-top'
+        />
+      </motion.div>
 
       {/* Scroll down */}
       <motion.div
@@ -96,7 +107,7 @@ const Hero = () => {
           variant='ghost'
           className='absolute -bottom-90 left-1/2 -translate-x-1/2 text-white'
           onClick={() => {
-            const section = document.getElementById('strengths');
+            const section = document.getElementById('projects');
             if (section) section.scrollIntoView({ behavior: 'smooth' });
           }}
         >
@@ -109,7 +120,7 @@ const Hero = () => {
 
       {/* kanan - statistics & contact */}
       <motion.div
-        className='absolute top-40 right-10 flex flex-col items-end gap-4'
+        className='absolute top-8 right-20 flex flex-col items-end gap-4'
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 1 }}
@@ -117,10 +128,10 @@ const Hero = () => {
         <Statistics />
         <Button
           onClick={() => {
-            const section = document.getElementById('strengths');
+            const section = document.getElementById('contact');
             if (section) section.scrollIntoView({ behavior: 'smooth' });
           }}
-          className='bg-secondary-100 flex h-auto w-56 items-center justify-between rounded-full px-4 hover:bg-[#D9A23F]'
+          className='bg-secondary-100 mt-10 flex h-auto w-56 items-center justify-between rounded-full px-4 hover:bg-[#D9A23F]'
         >
           <p className='text-md-semibold my-2 leading-8 text-neutral-950'>
             Contact Me
@@ -137,8 +148,9 @@ const Hero = () => {
       </motion.div>
 
       {/* kiri bawah - Hi I'm Edwin */}
+
       <motion.div
-        className='absolute bottom-29 left-10 w-[451px] text-white'
+        className='absolute bottom-20 left-10 w-[451px] text-white'
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 1.2 }}
