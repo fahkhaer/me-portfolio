@@ -54,6 +54,7 @@ export const projectsData: Project[] = [
     imageSrc: tripsync,
     name: 'TripSync',
     description: 'Fullstack • AI • React • Socket.IO',
+    videoSrc: '/videos/tripsync.mov',
     link: 'https://group-project-f6682.web.app',
     github: 'https://github.com/latifahkhaerani/TripSync',
   },
