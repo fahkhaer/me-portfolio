@@ -9,7 +9,7 @@ const statistics: Statistic[] = [
     info: 'Full Stack Journey',
   },
   {
-    data: '10+',
+    data: '15+',
     info: 'Projects Built',
   },
   {

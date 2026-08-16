@@ -13,13 +13,15 @@ import sociality from '../../public/images/sociality.png';
 import compro from '../../public/images/compro.png';
 import porto from '../../public/images/porto.png';
 import cms from '../../public/images/cms.png';
+import shirt from '../../public/images/shirt.png';
+import kandangi from '../../public/images/kandangi.png';
 
 export type Project = {
   imageSrc: StaticImageData;
   videoSrc?: string;
   name: string;
   description: string;
-  link: string;
+  link?: string;
   github?: string;
 };
 
@@ -27,7 +29,7 @@ export const projectsData: Project[] = [
   {
     imageSrc: cosfit,
     name: 'CosFit',
-    description: 'Fullstack • AI • E-commerce',
+    description: 'Fullstack • AI • E-commerce • Payment Gateway',
     link: 'https://final-project-six-lemon.vercel.app/',
     github: 'https://github.com/latifahkhaerani/CosFit',
   },
@@ -51,7 +53,7 @@ export const projectsData: Project[] = [
   {
     imageSrc: tripsync,
     name: 'TripSync',
-    description: 'Fullstack • AI • React',
+    description: 'Fullstack • AI • React • Socket.IO',
     link: 'https://group-project-f6682.web.app',
     github: 'https://github.com/latifahkhaerani/TripSync',
   },
@@ -125,7 +127,6 @@ export const projectsData: Project[] = [
     link: 'https://social-media-tsy7.vercel.app/',
     github: 'https://github.com/latifahkhaerani/Sociality',
   },
-
   {
     imageSrc: porto,
     name: 'Portfolio',
@@ -133,5 +134,29 @@ export const projectsData: Project[] = [
     description: 'Frontend • Next.js • Tailwind CSS • Framer Motion',
     link: 'https://portfolio-ten-plum-57.vercel.app/',
     github: 'https://github.com/latifahkhaerani/Portfolio-Slicing',
+  },
+  {
+    imageSrc: shirt,
+    name: 'E-Commerce 1',
+    videoSrc: '/videos/shirt.mov',
+    description: 'Frontend • HTML • CSS Vanilla',
+    link: 'https://latifahkhaerani.github.io/E-Commerce-Fashion/',
+    github: 'https://github.com/latifahkhaerani/E-Commerce-Fashion',
+  },
+  {
+    imageSrc: shirt,
+    name: 'E-Commerce 2',
+    // videoSrc: '/videos/shirt.mov',
+    description: 'Frontend • Next.js • TypeScript • TanStack Query • Axios',
+    link: 'https://e-commerce-theta-liart-83.vercel.app/',
+    github: 'https://github.com/latifahkhaerani/E-Commerce-Fashion2',
+  },
+  {
+    imageSrc: kandangi,
+    name: 'Kandangi',
+    // videoSrc: '/videos/shirt.mov',
+    description: 'Fullstack • EJS • Multer • Express • Sequelize',
+    // link: 'https://e-commerce-theta-liart-83.vercel.app/',
+    github: 'https://github.com/latifahkhaerani/Kandangi',
   },
 ];
