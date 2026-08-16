@@ -24,17 +24,17 @@ const statistics: Statistic[] = [
 
 const Statistics = () => {
   return (
-    <div className='divide-primary-300 mt-6 flex flex-col items-start gap-5 text-white max-md:divide-x md:mt-12 md:divide-y'>
+    <div className='flex flex-col justify-items-start  text-white 2xl:mt-12'>
       {statistics.map((statistic) => (
         <div
           key={statistic.data}
-          className='w-55.5 flex-1 text-left max-md:w-full max-md:py-5 max-md:first:pt-0 max-md:last:pb-0 md:last:pr-0'
+          className='border-primary-300 w-55.5 border-b py-4 text-left last:border-b-0'
         >
-          <p className='display-md-bold md:display-lg-bold'>
+          <p className='display-sm-bold 2xl:display-lg-bold'>
             {statistic.data}
           </p>
 
-          <p className='text-sm-regular md:text-md-semibold mb-5'>
+          <p className='font-regular 2xl:text-md-semibold text-[13px]'>
             {statistic.info}
           </p>
         </div>
