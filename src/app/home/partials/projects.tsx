@@ -15,48 +15,48 @@ const Projects = () => {
   const displayedProjects = showAll ? projectsData : projectsData.slice(0, 6);
 
   return (
-   <Section
-  id="projects"
-  title={
-    <p className="display-xl-bold">
-      Things I&apos;ve
-      <span className="text-primary-300"> Built </span>
-    </p>
-  }
-  subtitle="From pixel-perfect interfaces to fullstack applications, AI-powered products, and mobile experiences."
-  className="py-20"
->
-  <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
-    {displayedProjects.map((project) => (
-      <Card
-        key={project.name}
-        imageSrc={project.imageSrc}
-        videoSrc={project.videoSrc}
-        name={project.name}
-        description={project.description}
-        link={project.link}
-        github={project.github}
-      />
-    ))}
-  </div>
-
-  {/* See All */}
-  <div className="mt-12 flex justify-center">
-    <Button
-      variant="outline"
-      onClick={() => setShowAll(!showAll)}
-      className="flex items-center gap-3 rounded-full px-6 py-5 text-base"
+    <Section
+      id='projects'
+      title={
+        <p className='display-xl-bold'>
+          Things I&apos;ve
+          <span className='text-primary-300'> Built </span>
+        </p>
+      }
+      subtitle='From pixel-perfect interfaces to fullstack applications, AI-powered products, and mobile experiences.'
+      className='py-20'
     >
-      {showAll ? 'Show Less' : 'See All'}
+      <div className='grid grid-cols-1 gap-10 md:grid-cols-3'>
+        {displayedProjects.map((project) => (
+          <Card
+            key={project.name}
+            imageSrc={project.imageSrc}
+            videoSrc={project.videoSrc}
+            name={project.name}
+            description={project.description}
+            link={project.link}
+            github={project.github}
+          />
+        ))}
+      </div>
 
-      {showAll ? (
-        <ArrowUp className="h-5 w-5" />
-      ) : (
-        <ArrowDown className="h-5 w-5" />
-      )}
-    </Button>
-  </div>
-</Section>
+      {/* See All */}
+      <div className='mt-12 flex justify-center'>
+        <Button
+          variant='outline'
+          onClick={() => setShowAll(!showAll)}
+          className='flex items-center gap-3 rounded-full px-6 py-5 text-base'
+        >
+          {showAll ? 'Show Less' : 'See All'}
+
+          {showAll ? (
+            <ArrowUp className='h-5 w-5' />
+          ) : (
+            <ArrowDown className='h-5 w-5' />
+          )}
+        </Button>
+      </div>
+    </Section>
   );
 };
 
@@ -126,7 +126,7 @@ const Card = ({
             >
               <Globe className='h-4 w-4 shrink-0' />
 
-              <span>Live Website</span>
+              <span> Website</span>
             </Link>
           )}
 
