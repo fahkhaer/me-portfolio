@@ -38,21 +38,21 @@ function Clients() {
         id='clients'
         title='From Broadcasting to Software'
         subtitle='A career transition driven by curiosity, technology, and the desire to build what comes next.'
-        className='mx-auto bg-neutral-950 py-20'
+        className='mx-auto bg-neutral-950 py-14 sm:py-16 lg:py-20'
       >
         {experiencesData.map((exp) => (
-          <div key={exp.company} className='border-t border-neutral-800 py-8'>
-            <div className='grid gap-6 md:grid-cols-[150px_1fr_1fr] md:items-center'>
+          <div key={exp.company} className='border-t border-neutral-800 py-6 sm:py-8'>
+            <div className='grid gap-5 sm:gap-6 md:grid-cols-[150px_minmax(160px,1fr)_minmax(0,1.2fr)] md:items-center'>
               {/* year + role */}
               <div>
                 <p className='text-sm text-neutral-400'>{exp.year}</p>
-                <p className='text-xl leading-tight font-semibold text-white'>
+                <p className='text-lg font-semibold leading-tight text-white sm:text-xl'>
                   {exp.role}
                 </p>
               </div>
 
               {/* logo */}
-              <div className='flex justify-center'>
+              <div className='flex justify-start md:justify-center'>
                 <div className='flex h-[70px] w-[180px] items-center justify-center overflow-hidden rounded-3xl border border-neutral-800 bg-white p-4'>
                   <Image
                     src={exp.logo}
@@ -65,7 +65,7 @@ function Clients() {
               </div>
 
               {/* description */}
-              <p className='text-md-regular leading-relaxed text-neutral-400'>
+              <p className='text-sm leading-6 text-neutral-400 sm:text-base sm:leading-7'>
                 {exp.description}
               </p>
             </div>

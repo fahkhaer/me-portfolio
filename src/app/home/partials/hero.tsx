@@ -5,198 +5,125 @@ import Image from 'next/image';
 import { Icon } from '@iconify/react';
 import Statistics from '@/src/components/ui/statistic';
 import TechLogo from '@/src/components/ui/tech-logo';
-import Link from 'next/link';
 
 const Hero = () => {
-  return (
-    <section className='relative flex h-screen w-screen items-center justify-center overflow-hidden bg-[#A53860F0]'>
-      {/* kiri - tech logo floating */}
-      {/* Tech Stack */}
-      <motion.div
-  className='absolute left-6 flex h-screen flex-col items-start justify-center gap-10 2xl:left-10'
-  initial={{ opacity: 0, x: -50 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 1, delay: 1.2 }}
->
-  {/* Tech Stack */}
-  <div className='border-primary-300 flex flex-col items-center gap-3 rounded-full border px-2 py-4'>
-    {['js', 'css', 'html', 'react'].map((tech) => (
-      <TechLogo
-        key={tech}
-        logo={
-          <Image
-            width={20}
-            height={20}
-            src={`/icons/${tech}.png`}
-            alt={`logo-${tech}`}
-          />
-        }
-      />
-    ))}
-  </div>
+  const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
-  {/* Intro */}
-  <div className='w-[min(451px,35vw)] text-white'>
-    <div className='flex flex-col gap-4'>
-      <div>
-        <Icon
-          icon='fluent:mic-24-filled'
-          className='size-11 rounded-full border border-[#B76080] p-1'
-        />
+  return (
+    <section className='relative min-h-[780px] w-full overflow-hidden bg-[#A53860F0] pt-20 text-white sm:min-h-[820px] lg:h-screen lg:min-h-[720px]'>
+      {/* Desktop left rail */}
+      <motion.div
+        className='absolute left-6 top-1/2 hidden -translate-y-1/2 flex-col items-start justify-center gap-8 xl:flex 2xl:left-10'
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 1.2 }}
+      >
+        <div className='border-primary-300 flex flex-col items-center gap-3 rounded-full border px-2 py-4'>
+          {['js', 'css', 'html', 'react'].map((tech) => (
+            <TechLogo key={tech} logo={<Image width={20} height={20} src={`/icons/${tech}.png`} alt={`logo-${tech}`} />} />
+          ))}
+        </div>
+
+        <div className='w-[min(451px,30vw)]'>
+          <Icon icon='fluent:mic-24-filled' className='size-11 rounded-full border border-[#B76080] p-1' />
+          <p className='mt-4 text-base font-bold 2xl:text-xl'>Hi, I'm Latifahtul Khaerani</p>
+          <p className='mt-3 text-sm leading-relaxed 2xl:text-lg'>I build modern web & mobile applications with a strong focus on frontend development and AI-powered experiences, creating clean interfaces and seamless user experiences.</p>
+        </div>
+      </motion.div>
+
+      {/* Mobile intro */}
+      <div className='absolute inset-x-5 bottom-8 z-20 xl:hidden sm:bottom-10'>
+        <div className='mx-auto max-w-lg rounded-2xl border border-white/15 bg-black/10 p-4 backdrop-blur-sm'>
+          <div className='flex items-center gap-3'>
+            <Icon icon='fluent:mic-24-filled' className='size-9 shrink-0 rounded-full border border-[#B76080] p-1' />
+            <p className='text-sm font-bold sm:text-base'>Hi, I'm Latifahtul Khaerani</p>
+          </div>
+          <p className='mt-2 text-xs leading-5 text-white/85 sm:text-sm'>I build modern web & mobile applications with a strong focus on frontend development and AI-powered experiences.</p>
+        </div>
       </div>
 
-      <p className='2xl:text-xl-bold text-md-bold'>
-        Hi, I'm Latifahtul Khaerani
-      </p>
-
-      <p className='2xl:text-lg-medium text-sm-medium leading-relaxed'>
-        I build modern web & mobile applications with a strong focus on
-        frontend development and AI-powered experiences, creating clean
-        interfaces and seamless user experiences.
-      </p>
-    </div>
-  </div>
-</motion.div>
-
-      {/* Tengah - Hero Text */}
-      <div className='relative flex flex-col items-center text-center'>
-        {/* Junior */}
-
+      {/* Center heading */}
+      <div className='absolute inset-x-0 top-28 z-10 flex flex-col items-center text-center sm:top-32 lg:top-1/2 lg:-translate-y-1/2'>
         <motion.p
-          className='font-bonheur absolute -top-60 -left-76 z-20 -rotate-12 text-[80px] leading-none text-white 2xl:text-[113px]'
-          initial={{ opacity: 0, y: -50 }}
+          className='font-bonheur absolute -top-8 -left-2 z-20 -rotate-12 text-[48px] leading-none text-white sm:-left-8 sm:text-[64px] lg:-top-24 lg:-left-36 lg:text-[80px] 2xl:-left-56 2xl:text-[113px]'
+          initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: 'easeOut', delay: 0.3 }}
         >
           Junior
         </motion.p>
 
-        {/* FRONTEND DEVELOPER */}
-        <div className='font-anton text-secondary-100 absolute -top-[326px] z-10 translate-y-25 leading-[0.9]'>
-          <p className='text-[3vw] md:text-[160px] xl:text-[9vw]'>FULLSTACK</p>
-          <p className='text-[2vw] md:text-[140px] xl:text-[8vw]'>
-            DEV
-            <span className='stroke-yellow stroke-2 text-[2vw] text-transparent mix-blend-overlay md:text-[140px] xl:text-[8vw]'>
-              ELO
-            </span>
-            PER
-          </p>
-        </div>
-
-        {/* Available for Hire */}
         <motion.div
-          className='absolute -top-85 mt-10 flex items-center gap-3'
+          className='font-anton text-secondary-100 leading-[0.82]'
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <p className='text-[clamp(3.4rem,18vw,7rem)] sm:text-[clamp(4rem,15vw,8rem)] lg:text-[9vw]'>FULLSTACK</p>
+          <p className='text-[clamp(3.2rem,17vw,6.6rem)] sm:text-[clamp(3.8rem,14vw,7.5rem)] lg:text-[8vw]'>
+            DEV<span className='stroke-yellow stroke-2 text-transparent mix-blend-overlay'>ELO</span>PER
+          </p>
+        </motion.div>
+
+        <motion.div
+          className='mt-5 flex items-center gap-3 sm:mt-7 lg:absolute lg:-bottom-20'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.3 }}
         >
-          <Button
-            className='border-primary-300 rounded-full border bg-[#860D39] text-white hover:bg-[#E26190]/30'
-            variant='secondary'
-          >
-            <Icon
-              icon='fontisto:ellipse'
-              width='20'
-              height='20'
-              className='text-[#E26190]'
-            />
-            <p>Available for Hire</p>
+          <Button className='border-primary-300 rounded-full border bg-[#860D39] px-4 text-white hover:bg-[#E26190]/30' variant='secondary'>
+            <Icon icon='fontisto:ellipse' width='16' height='16' className='text-[#E26190]' />
+            <p className='text-xs sm:text-sm'>Available for Hire</p>
           </Button>
         </motion.div>
       </div>
 
-      {/* Hero Image hover */}
+      {/* Portrait */}
       <motion.div
-        className='absolute bottom-[-95] left-1/2 z-0 w-[350px] -translate-x-1/2 md:w-[420px] lg:w-[480px] 2xl:bottom-0'
+        className='absolute bottom-16 left-1/2 z-[5] w-[270px] -translate-x-1/2 sm:bottom-14 sm:w-[330px] md:w-[390px] lg:bottom-0 lg:w-[420px] xl:w-[480px] 2xl:w-[520px]'
         initial={{ y: 200, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, ease: 'easeOut', delay: 0.7 }}
         whileHover={{ scale: 1.02 }}
       >
-        <Image
-          src='/images/fah.png'
-          alt='Latifah'
-          width={480}
-          height={480}
-          priority
-          className='h-auto w-full object-top'
-        />
+        <Image src='/images/fah.png' alt='Latifah' width={520} height={520} priority className='h-auto w-full object-top' />
       </motion.div>
 
-      {/* Scroll down */}
-      <motion.div
-        className='h-screen'
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: [0, 10, 0] }}
-        transition={{ duration: 1, repeat: Infinity, delay: 1.5 }}
+      {/* Mobile contact */}
+      <Button
+        onClick={() => scrollTo('contact')}
+        className='absolute bottom-8 right-5 z-30 hidden h-11 rounded-full bg-secondary-100 px-4 text-neutral-950 shadow-lg sm:right-8 md:flex lg:right-10 xl:hidden'
       >
-        <Button
-          variant='ghost'
-          className='absolute bottom-7 left-1/2 -translate-x-1/2 text-white'
-          onClick={() => {
-            const section = document.getElementById('projects');
-            if (section) section.scrollIntoView({ behavior: 'smooth' });
-          }}
-        >
-          <div className='flex items-center gap-2'>
-            <p className='text-md-semibold'>Scroll Down</p>
-            <Icon icon='lucide:mouse' width='24' height='24' />
-          </div>
-        </Button>
-      </motion.div>
+        Contact Me <Icon icon='ic:round-arrow-forward' width='22' height='22' />
+      </Button>
 
-      {/* kanan - statistics & contact */}
+      {/* Desktop right rail */}
       <motion.div
-        className='absolute right-20 flex h-screen flex-col items-start justify-center gap-4'
+        className='absolute right-8 top-1/2 hidden -translate-y-1/2 flex-col items-start gap-4 xl:flex 2xl:right-16'
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 1 }}
       >
         <Statistics />
-        <Button
-          onClick={() => {
-            const section = document.getElementById('contact');
-            if (section) section.scrollIntoView({ behavior: 'smooth' });
-          }}
-          className='bg-secondary-100 mt-10 flex h-auto w-56 items-center justify-between rounded-full px-4 hover:bg-[#D9A23F]'
-        >
-          <p className='text-md-semibold my-2 leading-8 text-neutral-950'>
-            Contact Me
-          </p>
+        <Button onClick={() => scrollTo('contact')} className='mt-6 flex h-auto w-52 items-center justify-between rounded-full bg-secondary-100 px-4 hover:bg-[#D9A23F]'>
+          <p className='my-2 text-sm font-semibold leading-8 text-neutral-950'>Contact Me</p>
           <div className='flex size-8 items-center justify-center rounded-full bg-neutral-950'>
-            <Icon
-              icon='ic:round-arrow-forward'
-              width='36'
-              height='36'
-              className='text-white'
-            />
+            <Icon icon='ic:round-arrow-forward' width='28' height='28' className='text-white' />
           </div>
         </Button>
       </motion.div>
 
-      {/* kiri bawah - Hi I'm Edwin */}
-
-      {/* <motion.div
-        className='absolute bottom-20 left-10 w-[451px] text-white'
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, delay: 1.2 }}
+      {/* Scroll down */}
+      <motion.div
+        className='absolute bottom-5 left-1/2 z-30 -translate-x-1/2'
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: [0, 8, 0] }}
+        transition={{ duration: 1, repeat: Infinity, delay: 1.5 }}
       >
-        <div className='flex flex-col gap-4'>
-          <div>
-            <Icon
-              icon='fluent:mic-24-filled'
-              className='size-11 rounded-full border border-[#B76080] p-1'
-            />
-          </div>
-          <p className='2xl:text-xl-bold text-md-bold'>
-            Hi, I'm Latifahtul Khaerani
-          </p>
-          <p className='2xl:text-lg-medium text-sm-medium leading-relaxed '>
-           I build modern web & mobile applications with a strong focus on frontend development and AI-powered experiences, creating clean interfaces and seamless user experiences.
-          </p>
-        </div>
-      </motion.div> */}
+        <Button variant='ghost' className='text-white hover:bg-white/10' onClick={() => scrollTo('projects')}>
+          <div className='flex items-center gap-2'><p className='text-xs font-semibold sm:text-sm'>Scroll Down</p><Icon icon='lucide:mouse' width='20' height='20' /></div>
+        </Button>
+      </motion.div>
     </section>
   );
 };

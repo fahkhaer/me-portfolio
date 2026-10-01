@@ -24,9 +24,9 @@ const Projects = () => {
         </p>
       }
       subtitle='From pixel-perfect interfaces to fullstack applications, AI-powered products, and mobile experiences.'
-      className='py-20'
+      className='py-14 sm:py-16 lg:py-20'
     >
-      <div className='grid grid-cols-1 gap-10 md:grid-cols-3'>
+      <div className='grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-10'>
         {displayedProjects.map((project) => (
           <Card
             key={project.name}
@@ -41,11 +41,11 @@ const Projects = () => {
       </div>
 
       {/* See All */}
-      <div className='mt-12 flex justify-center'>
+      <div className='mt-8 flex justify-center sm:mt-12'>
         <Button
           variant='outline'
           onClick={() => setShowAll(!showAll)}
-          className='flex items-center gap-3 rounded-full px-6 py-5 text-base'
+          className='flex items-center gap-2 rounded-full px-5 py-4 text-sm sm:gap-3 sm:px-6 sm:py-5 sm:text-base'
         >
           {showAll ? 'Show Less' : 'See All'}
 
@@ -82,7 +82,7 @@ const Card = ({
   return (
     <div className='group flex flex-col gap-4'>
       {/* Preview */}
-      <div className='relative overflow-hidden rounded-3xl bg-neutral-100 pt-4 pb-2'>
+      <div className='relative overflow-hidden rounded-2xl bg-neutral-100 px-2 pt-3 pb-2 sm:rounded-3xl sm:pt-4'>
         {videoSrc ? (
           <video
             src={videoSrc}
@@ -91,24 +91,24 @@ const Card = ({
             loop
             playsInline
             preload='metadata'
-            className='mx-auto aspect-video w-full rounded-2xl object-contain object-top transition duration-500 group-hover:scale-[1.02]'
+            className='mx-auto aspect-video w-full rounded-xl object-contain object-top transition duration-500 group-hover:scale-[1.02] sm:rounded-2xl'
           />
         ) : (
           <Image
             src={imageSrc}
             alt={name}
-            className='mx-auto aspect-video w-full rounded-2xl object-contain object-top transition duration-500 group-hover:scale-[1.02]'
+            className='mx-auto aspect-video w-full rounded-xl object-contain object-top transition duration-500 group-hover:scale-[1.02] sm:rounded-2xl'
           />
         )}
       </div>
 
       {/* Project Info */}
-      <div className='rounded-2xl bg-white p-5 shadow-sm transition duration-300 group-hover:shadow-md'>
+      <div className='rounded-2xl bg-white p-4 shadow-sm transition duration-300 group-hover:shadow-md sm:p-5'>
         {/* Name + Description */}
         <div className='min-w-0'>
           <h4 className='text-lg font-semibold text-neutral-900'>{name}</h4>
 
-          <p className='mt-1 text-[10px] leading-relaxed text-neutral-600'>
+          <p className='mt-1 text-xs leading-5 text-neutral-600 sm:text-[13px] sm:leading-relaxed'>
             {description}
           </p>
         </div>

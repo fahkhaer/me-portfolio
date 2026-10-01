@@ -28,7 +28,7 @@ const goals = [
 function WhatNext() {
   return (
     <Section
-      className='py-20'
+      className='py-14 sm:py-16 lg:py-20'
       title="WHAT'S NEXT"
       subtitle="I'm always looking for new challenges, meaningful products, and opportunities to grow as a developer."
       id='next'
@@ -48,9 +48,9 @@ function WhatNext() {
             className='group relative'
           >
             {/* Main card */}
-            <div className='bg-primary-300 relative z-20 flex min-h-[320px] flex-col rounded-[32px] p-8'>
+            <div className='bg-primary-300 relative z-20 flex min-h-[280px] flex-col rounded-[28px] p-6 sm:min-h-[320px] sm:rounded-[32px] sm:p-8'>
               {/* Icon */}
-              <div className='mb-8 flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-sm'>
+              <div className='mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm sm:mb-8 sm:h-16 sm:w-16'>
                 <Icon
                   icon={goal.icon}
                   className='text-primary-500 text-3xl'
@@ -58,11 +58,11 @@ function WhatNext() {
               </div>
 
               {/* Content */}
-              <h3 className='text-xl font-bold text-white'>
+              <h3 className='text-lg font-bold text-white sm:text-xl'>
                 {goal.title}
               </h3>
 
-              <p className='mt-4 text-base leading-7 text-white/80'>
+              <p className='mt-3 text-sm leading-6 text-white/80 sm:mt-4 sm:text-base sm:leading-7'>
                 {goal.description}
               </p>
             </div>

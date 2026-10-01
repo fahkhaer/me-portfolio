@@ -17,18 +17,18 @@ export default function SkillsSection() {
       id='skill'
       title='Code, Design, and Everything in Between'
       subtitle='Technologies I use to turn ideas, designs, and problems into working digital products.'
-      className='py-20 overflow-hidden'
+      className='overflow-hidden py-14 sm:py-16 lg:py-20'
     >
       <Carousel>
-        <CarouselContent className='-ml-4'>
+        <CarouselContent className='-ml-3 sm:-ml-4'>
           {skillsData.map(({ title, subtitle, className, icon }) => (
             <CarouselItem
               key={title}
-              className='basis-full pl-4 sm:basis-1/2 lg:basis-1/4'
+              className='basis-[88%] pl-3 sm:basis-1/2 sm:pl-4 lg:basis-1/4'
             >
               <div
                 className={cn(
-                  'flex min-h-[281px] w-full flex-col items-center rounded-[40px] border border-neutral-200 bg-white p-6 text-center shadow-sm',
+                  'flex min-h-[260px] w-full flex-col items-center rounded-[28px] border border-neutral-200 bg-white p-5 text-center shadow-sm sm:min-h-[281px] sm:rounded-[40px] sm:p-6',
                   className
                 )}
               >

@@ -34,16 +34,16 @@ function Strength() {
 
   return (
     <Section
-      className='py-20'
+      className='py-14 sm:py-16 lg:py-20'
       title='WHAT I BRING'
       subtitle='Beyond writing code, I care about how a product looks, feels, and works.'
       id='strengths'
     >
-      <div className='grid gap-6 md:grid-cols-2'>
+      <div className='grid gap-4 sm:gap-6 md:grid-cols-2'>
         {strengths.map((strength, index) => (
           <motion.div
             key={strength.title}
-            className='rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm'
+            className='rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm sm:p-8'
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
