@@ -18,11 +18,11 @@ function Navbar() {
     >
       <div className='mx-auto flex h-14 max-w-300 items-center justify-between rounded-full border border-white/10 px-4 sm:px-6'>
         <Link href='#' className='font-semibold tracking-wide text-white'>
-          Lala.
+          Portfolio 
         </Link>
 
         <nav className='hidden lg:block'>
-          <ul className='flex items-center gap-5 xl:gap-7'>
+          <ul className='flex items-center justify-center gap-5 xl:gap-7'>
             {navigationData.map((data) => (
               <li key={data.label}>
                 <Link href={data.href} className='text-sm font-medium tracking-wide text-white transition-opacity hover:opacity-70 xl:text-base'>

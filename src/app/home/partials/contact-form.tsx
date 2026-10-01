@@ -8,14 +8,19 @@ import { ArrowUpRight, Github, Linkedin, Mail } from 'lucide-react';
 
 const ContactForm = () => {
   return (
-    <section id='contact' className='relative overflow-x-hidden px-4 py-14 sm:px-6 sm:py-16 md:px-10 lg:px-16 xl:px-24 2xl:px-30 lg:py-20'>
+    <section
+      id='contact'
+      className='relative overflow-x-hidden px-4 py-14 sm:px-6 sm:py-16 md:px-10 lg:px-16 lg:py-20 xl:px-24 2xl:px-30'
+    >
       <div className='mx-auto flex max-w-300 flex-col gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-12'>
         {/* LEFT */}
-        <div className='w-full lg:max-w-xl'>
+        <div className='w-full lg:flex-1'>
           <div>
-            <p className='text-[clamp(2rem,5vw,2.5rem)] font-bold leading-tight'>Let’s Work Together</p>
+            <p className='text-[clamp(2rem,5vw,2.5rem)] leading-tight font-bold'>
+              Let’s Work Together
+            </p>
 
-            <p className='mt-4 text-sm font-medium leading-6 text-neutral-600 sm:text-base sm:leading-7'>
+            <p className='mt-4 w-full text-sm leading-6 font-medium text-neutral-600 sm:text-base sm:leading-7'>
               Looking for a developer for your next project? I&apos;d love to
               hear what you&apos;re building. I&apos;m open to remote
               opportunities and collaborations with teams around the world.
